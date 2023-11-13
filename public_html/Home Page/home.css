@@ -55,6 +55,22 @@ input.searchBar{
     background-color: #F2F4F8;
 }
 
+/*Change Search button*/
+button#Search{
+    padding: 10px 30px;
+    border: 2px solid #04724D;
+    background-color: #04724D;
+    color: white;
+}
+
+/*Change contents outside Search button*/
+li.search{
+    padding:0;
+    margin-top: 35px;
+    margin-left: 15px;
+    float: right;
+}
+
 /*Change contents outside Sign up button*/
 li.signUp{
     padding-right: 30px;
