@@ -17,6 +17,7 @@ body {
 
 #I {
     grid-area: I;
+    position: relative;
 }
 
 img {
@@ -127,4 +128,3 @@ hr {
     background-color: #D5D8DE;
     border: transparent;
 }
-
