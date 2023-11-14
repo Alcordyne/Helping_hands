@@ -7,7 +7,7 @@
   font-size: 50px;
   margin: auto;
   width: 35%;
-  padding: 3%;
+  padding: 5%;
   text-align: center;
 }
 
@@ -28,7 +28,8 @@
   border: 1px solid #dde1e6;
   margin: auto;
   display: block;
-  margin-bottom:40px;
+  margin-bottom: 40px;
+  text-align: center;
 }
 
 #jrImage {
@@ -43,6 +44,7 @@
   text-align: center;
   font-weight: 600;
   margin: auto;
+  margin-top: 5px;
 }
 
 #jrDescription {
@@ -52,23 +54,31 @@
   height: 30%;
 }
 
-#jrBtn {
-  display: inline-flex;
+#bookmarkBtn {
+  cursor: pointer;
+  display: inline-block;
   margin: auto;
   margin-left: 5%;
   height: 10%;
+  line-height:250%;
   width: 40%;
   border: 1px solid #dde1e6;
-  font-size: 12px;
+  border-radius: 5px;
+  font-size:medium;
   text-align: center;
+  background-color: #04724d;
+  color: white;
 }
 
 #moreInfoBtn {
-  display: inline-flex;
-  margin: auto;
-  margin-left: 5%;
-  height: 20px;
-  width: 40%;
-  border: 1px solid #dde1e6;
-  font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    margin: auto;
+    margin-left: 5%;
+    height: 10%;
+    line-height:250%;
+    width: 40%;
+    font-size:medium;
+    text-align: center;
+    color: #04724d;
 }
