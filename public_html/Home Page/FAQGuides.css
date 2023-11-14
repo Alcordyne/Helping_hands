@@ -133,13 +133,15 @@ button#LogIn{
   margin-top: 100px;
 }
 .box{
-  width: 325px;
   height: 400px;
-  background-color: ;
-  border-radius: 10px;
-  overflow: hidden;
-  text-align: center;
+  width: 350px;
+  background-color: white;
+  list-style-type: none;
   border: 1px solid #dde1e6;
+  margin: auto;
+  display: block;
+  margin-bottom: 40px;
+  text-align: center;
 }
 .box img{
   margin: auto;
