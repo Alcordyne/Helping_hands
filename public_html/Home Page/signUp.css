@@ -4,7 +4,7 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/*Divides the page into 2 columns and 3 rows */
+/*Divides the page into 2 columns and 2 rows */
 #Container {
     display: grid;
     height: 100vh;
@@ -85,7 +85,7 @@ h2 {
 }
 
 p {
-    font-size: 16px;
+    font-size: 14px;
     display: inline;
 }
 
