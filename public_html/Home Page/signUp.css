@@ -105,6 +105,15 @@ input {
     margin-bottom: 15px;
 }
 
+input.password {
+    margin-bottom: 0;
+}
+
+#Pass > p {
+    font-size: 12px;
+    color: #697077;
+}
+
 button {
     height: 45px;
     width: 100%;
@@ -113,7 +122,7 @@ button {
     background-color: #04724D; 
     font-size: 16px;
     cursor: pointer;
-    margin-top: 35px;
+    margin-top: 50px;
 }
 
 button:hover{
@@ -123,7 +132,7 @@ button:hover{
 hr {
     margin-top: 50px;
     margin-bottom: 50px;
-    width: 528px;
+    width: 100%;
     height: 1px;
     background-color: #D5D8DE;
     border: transparent;
