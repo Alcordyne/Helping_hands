@@ -138,6 +138,7 @@ button#LogIn{
   border-radius: 10px;
   overflow: hidden;
   text-align: center;
+  border: 1px solid #dde1e6;
 }
 .box img{
   margin: auto;
