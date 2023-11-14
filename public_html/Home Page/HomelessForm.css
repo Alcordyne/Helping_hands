@@ -98,6 +98,17 @@ button#LogIn{
 
 /*----------Homeless Form Section Begins----------------*/
 
+.homelessForm{
+    height: 100%;
+    width: 100%;
+}
+.formHeader > h1{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 35px;
+    margin: 0;
+    
+    
 
 
 
