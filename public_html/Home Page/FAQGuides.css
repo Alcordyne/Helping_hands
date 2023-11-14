@@ -126,6 +126,7 @@ button#LogIn{
 }
 .box-container{
   display: flex;
+  align-item: stretch;
   justify-content: center;
   flex-wrap: wrap;
   gap: 25px;
