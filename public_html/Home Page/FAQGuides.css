@@ -158,13 +158,33 @@ button#LogIn{
   font-size: 15px;
   margin-bottom: 20px;
 }
-.box-button{
+#bookmarkBtn {
+  cursor: pointer;
   display: inline-block;
-  background-color: #04724D;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 10px;
-  padding: 8px 16px;
+  margin: auto;
+  margin-left: 5%;
+  height: 10%;
+  line-height:250%;
+  width: 40%;
+  border: 1px solid #dde1e6;
+  border-radius: 5px;
+  font-size:medium;
+  text-align: center;
+  background-color: #04724d;
+  color: white;
+}
+
+#moreInfoBtn {
+    cursor: pointer;
+    display: inline-block;
+    margin: auto;
+    margin-left: 5%;
+    height: 10%;
+    line-height:250%;
+    width: 40%;
+    font-size:medium;
+    text-align: center;
+    color: #04724d;
 }
 /*----------Guides Section Ends---------------*/
 
