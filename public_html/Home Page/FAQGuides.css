@@ -137,10 +137,6 @@ button#LogIn{
   background-color: ;
   border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.6s ease;
-}
-.box:hover{
-    transform: translateY(-20px);
 }
 .box img{
   margin: auto;
