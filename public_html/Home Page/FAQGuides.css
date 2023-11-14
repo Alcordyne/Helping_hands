@@ -143,7 +143,7 @@ button#LogIn{
 }
 .box img{
   width: 100%;
-  height: 100%;
+  height: 25%;
   object-fit: cover;
 }
 .box-content{
