@@ -133,10 +133,15 @@ button#LogIn{
   margin-top: 100px;
 }
 .box{
-  width: 325px;
-  background-color: ;
-  border-radius: 10px;
-  overflow: hidden;
+  height: 400px;
+  width: 350px;
+  background-color: white;
+  list-style-type: none;
+  border: 1px solid #dde1e6;
+  margin: auto;
+  display: block;
+  margin-bottom: 40px;
+  text-align: center;
   transition: transform 0.6s ease;
 }
 .box:hover{
