@@ -134,6 +134,7 @@ button#LogIn{
 }
 .box{
   width: 325px;
+  height: 400px;
   background-color: ;
   border-radius: 10px;
   overflow: hidden;
