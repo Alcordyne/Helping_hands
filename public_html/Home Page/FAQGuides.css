@@ -159,7 +159,7 @@ button#LogIn{
   font-size: 15px;
   margin-bottom: 20px;
 }
-#bookmarkBtn {
+.bookmarkBtn {
   cursor: pointer;
   display: inline-block;
   margin: auto;
@@ -175,7 +175,7 @@ button#LogIn{
   color: white;
 }
 
-#moreInfoBtn {
+.moreInfoBtn {
     cursor: pointer;
     display: inline-block;
     margin: auto;
