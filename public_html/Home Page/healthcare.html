@@ -25,18 +25,174 @@
         <!--END of Navigation Bar-->
         
         <!--Healthcare Section-->
+  <div id="Top">
+            <div id="Title"><h1>Healthcare Options</h1></div>
 
+                    <div id="zipCodeInput">
+                        <input class="zipCode" type="text" placeholder="Zip Code">
+                    </div>
 
-
-
-
-
-
-
-
-
+                    <div id="searchButton">
+                        <button type="button" id="search" onclick="searchHealthcareOptions()">Find Healthcare Options</button>
+                    </div>
+                    <script>
+                        function searchFoodBanks() {
+                          document.getElementById("fourSearches").style.display = "block";
+                          document.getElementById("moreButton").style.display = "block";
+                        }
+                    </script>
+                       
+            </div>
+            <div id="Map"><img src="map.png" alt="Map of healthcare options in Sacramento"></div>
+        </div>
+        <!-- End of Healthcare Options Section w/ Title and Map ONLY -->
         
- 
+        <!-- Search Results (DISPLAYING INITIAL 4 RESULTS ONLY)-->
+        <div id="fourSearches">
+            <div class="jResources">
+                <div id="jrTitle">Search Results</div>
+                <div id="jrList">
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+            <div id="moreButton"><button type="button" id="moreResults" onclick="hideMoreButton()">More Results</button></div>
+                <script>
+                    function hideMoreButton() {
+                      var x = document.getElementById("moreButton");
+                      if (x.style.display === "none") {
+                        x.style.display = "block";
+                      } else {
+                        x.style.display = "none";
+                      }
+                      document.getElementById("moreSearch").style.display = "block";
+                    }
+                </script>
+           
+        
+        <!-- End of Search Results (DISPLAYING INITIAL 4 RESULTS ONLY)-->
+        
+        <!-- MORE Search Results -->
+        <div id="moreSearch">
+            <div class="jResources">
+                <div id="jrList">
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div>
+                    <div id="jrElement">
+                        <div id="jrImage"></div>
+                        <p id="jrElementTitle">Healthcare Option Name</p>
+                        <p id="jrDescription">Address</p>
+                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
+                        <btn id="moreInfoBtn">More Info &#8594;</btn>
+                    </div> 
+                </div>
+            </div>
+        </div> 
+        <!-- End of MORE Search Results -->
+
         <!--END of Healthcare Section-->
         
         <!--Footer-->
