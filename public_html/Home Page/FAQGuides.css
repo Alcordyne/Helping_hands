@@ -133,7 +133,7 @@ button#LogIn{
   margin-top: 100px;
 }
 .box{
-  height: auto;
+  height: 450px;
   width: 350px;
   background-color: white;
   list-style-type: none;
