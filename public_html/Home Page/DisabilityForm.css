@@ -99,7 +99,7 @@ button#LogIn{
 /*----------Disability Form Section Begins----------------*/
 
 .disabilityForm{
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 .formHeader > h1{
