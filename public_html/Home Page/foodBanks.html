@@ -25,7 +25,29 @@
         <!--END of Navigation Bar-->
         
        <!--Food Banks Section-->
-  <!-- Search Results (DISPLAYING INITIAL 4 RESULTS ONLY)-->
+    <div id="Top">
+            <div id="Title"><h1>Food Banks</h1></div>
+
+                    <div id="zipCodeInput">
+                        <input class="zipCode" type="text" placeholder="Zip Code">
+                    </div>
+
+                    <div id="searchButton">
+                        <button type="button" id="search" onclick="searchFoodBanks()">Find Food Banks</button>
+                    </div>
+                    <script>
+                        function searchFoodBanks() {
+                          document.getElementById("fourSearches").style.display = "block";
+                          document.getElementById("moreButton").style.display = "block";
+                        }
+                    </script>
+                       
+            </div>
+            <div id="Map"><img src="map.png" alt="Map of food banks in Sacramento"></div>
+        </div>
+        <!-- End of Food Banks Section w/ Title and Map ONLY -->
+        
+        <!-- Search Results (DISPLAYING INITIAL 4 RESULTS ONLY)-->
         <div id="fourSearches">
             <div class="jResources">
                 <div id="jrTitle">Search Results</div>
@@ -105,13 +127,14 @@
            
         
         <!-- End of Search Results (DISPLAYING INITIAL 4 RESULTS ONLY)-->
+        
         <!-- MORE Search Results -->
         <div id="moreSearch">
             <div class="jResources">
                 <div id="jrList">
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
