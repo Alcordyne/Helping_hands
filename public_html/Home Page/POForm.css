@@ -1,1 +1,148 @@
+body{
+    margin: 0;
+    padding:0;
+    background: white;
+    font-family: 'Roboto', sans-serif;
+}
 
+/*----------------MISSION STATEMENT SECTION----------------*/
+
+/*The entire navigation bar: logo, 5 features, search bar, log in, and sign up*/
+nav{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+    display: inline-block;
+}
+
+/*ul for navigation bar*/
+nav > ul{
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+}
+
+/*Helping Hands Logo to shift left*/
+li img{
+    float: left;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/*Change contents outside Navigation bar for the 5 features*/
+nav > ul > li > a{
+    padding: 45px 0;
+    float: left;
+    text-align: center;
+    width: auto;
+    text-decoration: none;
+    color: black;
+    margin-right: 50px;
+}
+
+/*Change contents outside (the position) )Search Bar Input*/
+nav > ul > li > input{
+    float: right;
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+/*Change Search Bar design*/
+input.searchBar{
+    padding: 10px 40px;
+    border: 1px solid #D5D8DE;
+    background-color: #F2F4F8;
+}
+
+/*Change contents outside Sign up button*/
+li.signUp{
+    padding-right: 30px;
+    margin-top: 35px;
+    margin-left: 15px;
+    float: right;
+}
+
+/*Change Helping Hands Logo*/
+a.Logo{
+    padding: 0;
+}
+
+li a:hover{
+    color: #04724D;
+}
+
+/*Change contents Sign Up Button design*/
+button#SignUp{
+    padding: 10px 30px;
+    border: 2px solid #04724D;
+    background-color: #04724D;
+    color: white;
+}
+
+/*Change contents outside Log in button*/
+li.logIn{
+    padding:0;
+    margin-top: 35px;
+    margin-left: 15px;
+    float: right;
+}
+
+/*Change contents Log In Button design*/
+button#LogIn{
+    padding: 10px 30px;
+    border: 2px solid #04724D;
+    background-color: transparent;
+    color: #04724D;
+}
+
+/*----------PO Form Section Begins----------------*/
+
+.poForm{
+    height: 100%;
+    width: 100%;
+}
+.formHeader > h1{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 35px;
+    margin: 0;
+    color: #04724D;
+}
+.formHeader > p {
+    padding-top: 75px;
+    padding-bottom: 75px;
+    font-size: 25px;
+    margin: 0;
+}
+.instructionHeader > h1{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 35px;
+    margin: 0;
+}
+.instructionHeader > p{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 25px;
+    margin: 0;
+}
+    
+/*----------PO Form Section Ends-----------------*/
+
+
+/*----------------Footer----------------*/
+
+/*changes background of footer*/
+footer {
+    background-color: #666; 
+    color: #fff; 
+    padding: 20px 0; 
+    text-align: center;
+}
+
+/*centers footer*/
+.footer-content {
+    max-width: 500px; 
+    margin: 0 auto; 
+}
