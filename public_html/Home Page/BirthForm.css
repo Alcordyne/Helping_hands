@@ -116,7 +116,7 @@ button#LogIn{
     font-size: 25px;
     margin: 0;
 }
-.instructionHeader > h2{
+.instructionHeader > h1{
     padding-top: 75px;
     padding-bottom: 25px;
     font-size: 35px;
