@@ -1,0 +1,156 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+#Top {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.1fr 0.1fr 1fr;
+    grid-template-areas:
+        "Title"
+        "DropZipSearch"
+        "Map";
+    margin: 0 auto;
+}
+
+#Title {
+/*    background-color: pink;*/
+    grid-area: Title; 
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#DropZipSearch {
+/*    background-color: yellow;*/
+    grid-area: DropZipSearch;
+    display: grid;
+    width: 700px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "dropDown zipCodeInput searchButton";
+    padding: 25px;
+    place-items: center;
+    margin: 0 auto;
+}
+
+#Map {
+/*    background-color: green;*/
+    grid-area: Map;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#Map > img {
+    width: 75%;
+    height: auto;
+}
+
+#dropDown {
+    grid-area: dropDown;
+    width: 175px;
+    height: 50px;
+}
+
+#dropdown {
+    width: 175px;
+    height: 50px;
+    background-color: #F2F4F8; 
+    font-size: 16px;
+    border: none;
+    margin: 0;
+    border: 1px solid #DDE1E6;
+    text-align: center;
+}
+
+#zipCodeInput {
+    grid-area: zipCodeInput;
+    width: 250px;
+    height: 50px;
+}
+
+.zipCode {
+    font-size: 16px;
+    width: 250px;
+    height: 50px;
+    border: 0;
+    background-color: #F2F4F8;
+    text-align: center;
+    border: 1px solid #DDE1E6;
+}
+
+input.zipCode {
+    padding: 0;
+    height: 50px;
+}
+
+#searchButton {
+    grid-area: searchButton;
+    width: 150px;
+    height: 50px;
+    place-items: center;
+}
+
+button#search {
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    border: none;
+    background-color: #04724D;
+    color: white;
+    text-align: center;
+    padding: 0;
+    border: 1px solid #04724D;
+}
+
+button#search:hover {
+    background-color: #005236;
+}
+
+#jrTitle {
+    font-weight: bold;
+}
+
+#moreResults {
+    font-size: 16px;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #04724D;
+    background-color: #04724D;
+    color: white;
+    text-align: center;
+    padding: 0;
+}
+
+button#moreResults:hover {
+    background-color: #005236;
+}
+
+#moreButton {
+    margin-bottom: 40px;
+    text-align: center;
+    display: none;
+}
+
+#moreButton:click .jResources{
+    display: block;
+}
+
+#fourSearches {
+    display: none;
+}
+
+#moreSearch {
+    margin-top: 20px;
+    display: none;
+}
+
+
