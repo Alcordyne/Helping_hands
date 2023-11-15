@@ -100,7 +100,7 @@ button#LogIn{
 /*----------Birth Form Section Begins----------------*/
 
 .birthForm{
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 .formHeader > h1{
