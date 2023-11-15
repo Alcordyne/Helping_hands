@@ -131,6 +131,7 @@ button#LogIn{
   flex-wrap: wrap;
   gap: 25px;
   margin-top: 100px;
+  margin-bottom: 40px;
 }
 .box{
   height: 450px;
