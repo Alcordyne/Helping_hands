@@ -114,7 +114,7 @@ button#LogIn{
 .formHeader > p > a {
     padding-top: 75px;
     padding-bottom: 25px;
-    font-size: 25px;
+    font-size: 30px;
     margin: 0;
 }
 .instructionHeader > h1{
@@ -126,13 +126,13 @@ button#LogIn{
 .instructionHeader > p > a{
     padding-top: 75px;
     padding-bottom: 25px;
-    font-size: 25px;
+    font-size: 30px;
     margin: 0;
 }
 .information > p > a{
     padding-top: 75px;
     padding-bottom: 25px;
-    font-size: 25px;
+    font-size: 30px;
     margin: 0;
 }
     
