@@ -112,7 +112,7 @@ button#LogIn{
 }
 .formHeader > p {
     padding-top: 75px;
-    padding-bottom: 75px;
+    padding-bottom: 25px;
     font-size: 25px;
     margin: 0;
 }
