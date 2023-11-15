@@ -28,6 +28,9 @@ li img{
     float: left;
     padding-left: 10px;
     padding-right: 10px;
+    height: auto;
+    width: 300px;
+    padding-top: 4%;
 }
 
 /*Change contents outside Navigation bar for the 5 features*/
@@ -49,10 +52,18 @@ nav > ul > li > input{
 }
 
 /*Change Search Bar design*/
-input.searchBar{
+#searchInput {
     padding: 10px 40px;
     border: 1px solid #D5D8DE;
     background-color: #F2F4F8;
+    margin-right: 10px;
+    margin-top: 35px;
+}
+
+input#searchInput {
+    margin: 0;
+    margin-right: 10px;
+    height: 18px;
 }
 
 /*Change Search button*/
@@ -61,13 +72,14 @@ button#Search{
     border: 2px solid #04724D;
     background-color: #04724D;
     color: white;
+    float: right;
 }
 
 /*Change contents outside Search button*/
 li.search{
     padding:0;
     margin-top: 35px;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /*Change contents outside Sign up button*/
