@@ -99,7 +99,7 @@ button#LogIn{
 /*----------Homeless Form Section Begins----------------*/
 
 .homelessForm{
-    height: 100%;
+    height: auto;
     width: 100%;
 }
 .formHeader > h1{
