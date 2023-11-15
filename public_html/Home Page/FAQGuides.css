@@ -133,11 +133,6 @@ button#LogIn{
   margin-top: 100px;
   margin-bottom: 40px;
 }
-.row{
-    display: flex;
-    align-items: center;
-    justify-content:space-between;
-}
 .box{
   height: 450px;
   width: 350px;
@@ -145,10 +140,9 @@ button#LogIn{
   list-style-type: none;
   border: 1px solid #dde1e6;
   margin: auto;
-  display: flex;
+  display: block;
   margin-bottom: 40px;
   text-align: center;
-  align-self: normal;
 }
 .box img{
   width: 100%;
