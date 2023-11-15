@@ -109,7 +109,7 @@ button#LogIn{
     margin: 0;
     color: #04724D;
 }
-.formHeader > p {
+.formHeader > p{
     padding-top: 75px;
     padding-bottom: 75px;
     font-size: 25px;
@@ -121,7 +121,7 @@ button#LogIn{
     font-size: 35px;
     margin: 0;
 }
-.instructionHeader > p{
+.instructionHeader > p > a{
     padding-top: 75px;
     padding-bottom: 25px;
     font-size: 25px;
