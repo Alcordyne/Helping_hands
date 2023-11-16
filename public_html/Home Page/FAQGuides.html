@@ -11,7 +11,7 @@
         <!--Navigation Bar-->
         <nav>
             <ul>
-                <li><a class="Logo" href="home.html"><img src="HHLogo.png" alt="Hands holding up a house"></a></li>
+                <li><a class="Logo" href="home.html"><img src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></li>
                 <li><a href="shelters.html">Shelters</a></li>
                 <li><a href="foodBanks.html">Food Banks</a></li>
                 <li><a href="jobAssistance.html">Job Assistance</a></li>
@@ -19,11 +19,60 @@
                 <li><a href="FAQGuides.html">FAQ & Guides</a></li>
                 <li class="signUp"><button type="button" id="SignUp">Sign Up</button></li>
                 <li class="logIn"><button type="button" id="LogIn">Log In</button></li>
-                <li><input class="searchBar" type="text" placeholder="Search for..."></li>
+                <li class="search"><button onclick="search()" id="Search">Search</button></li>
+                <li><input type="text" id="searchInput" placeholder="Search for..."></li> 
             </ul>  
         </nav>
         <!--END of Navigation Bar-->
         
+         <!-- FAQ Section -->
+  <section class="faq-section">
+    <h2 style="color: #04724D; text-align: center;">Frequently Asked Questions</h2>
+
+
+    <!-- FAQ items go here -->
+    <!-- FAQ 1 -->
+    <div class="faq-item">
+      <h3>
+        What is this website and who is it for?
+        <span class="toggle-btn">+</span>
+      </h3>
+      <p class="answer">Many organizations provide services to aid the homeless community, but without proper information on how to receive help, it can be hard to find the right direction to take. Helping hands is a website that provides the necessary information for the homeless community to overcome challenges they are facing.</p>
+    </div>
+
+
+    <!-- FAQ 2 -->
+    <div class="faq-item">
+      <h3>
+        What services are covered by this site?
+        <span class="toggle-btn">+</span>
+      </h3>
+      <p class="answer">The services covered on this website include a way to locate shelter/food banks/healthcare facilities, access to employement resources, and guides on how to fill out certification forms for organizations that can provide services like student homelessness, disabilitity, birth certificates, and a P.O. box.</p>
+    </div>
+
+
+    <!-- FAQ 3 -->
+    <div class="faq-item">
+      <h3>
+        Are there helplines or hotlines I can call for support?
+        <span class="toggle-btn">+</span>
+      </h3>
+      <p class="answer">2-1-1 Sacramento is the primary provider of over-the-phone information for the Sacramento area. Dial 2-1-1 or 1-800-500-4931 for quick information on how to get help with emergency housing, food services, counseling, and/or employment. For those with hearing impairments, dial 7-1-1.</p>
+    </div>
+
+
+    <!-- FAQ 4 -->
+    <div class="faq-item">
+      <h3>
+        Is my personal information safe?
+        <span class="toggle-btn">+</span>
+      </h3>
+      <p class="answer">Your information is safe with us, this is a non-profit website and we will NOT sell your data.</p>
+    </div>
+
+
+  </section>
+  <!-- END of FAQ Section -->
         <!--FAQGuide Section-->
  <div class="guide">
             <div class="guideHeader">
@@ -32,16 +81,16 @@
             </div>
         </div>
                 <div class="box-container">
-                    <div class="box">
+                    <div class="box h-100">
                         <img src="homeless-form.jpg">
                         <div class="box-content">
                             <h3>Student Homelessness Certification Form</h3>
                             <p>The Student Homelessness Certification is used by multiple providers to affirm that a homeless youths who are under 25 years of age.</p>
                             <a class="bookmarkBtn">&#9734 Bookmark</a>
                             <a class="moreInfoBtn" href="HomelessForm.html">More Info &#8594;</a>
-                </div>
+                        </div>
                     </div>
-                     <div class="box">
+                     <div class="box h-100">
                         <img src="disability-form.jpg">
                         <div class="box-content">
                             <h3>Disability Certification Form (SSF)</h3>
@@ -50,7 +99,7 @@
                             <a class="moreInfoBtn" href="DisabilityForm.html">More Info &#8594;</a>
                 </div>
                      </div>
-                     <div class="box">
+                     <div class="box h-100">
                         <img src="Birth-form.jpg">
                         <div class="box-content">
                             <h3>Birth Certificate for Homelessness</h3>
@@ -59,16 +108,16 @@
                             <a class="moreInfoBtn" href="BirthForm.html">More Info &#8594;</a>
                  </div>
                      </div>
-                     <div class="box">
+                     <div class="box h-100">
                         <img src="Po-form.jpg">
                         <div class="box-content">
                             <h3>P.O. Box Form (Form 1093)</h3>
                             <p>Individual needs to fill out the Form 1093 in order to apply for a P.O. Box at any USPS Post Office</p>
                             <a class="bookmarkBtn">&#9734 Bookmark</a>
                             <a class="moreInfoBtn" href="POForm.html">More Info &#8594;</a>
-                </div>
+                        </div>
         
-            </div>
+                    </div>
                 </div>
         <!--END of FAQGuide Section-->
         

@@ -106,25 +106,29 @@ button#LogIn{
 .formHeader > h1{
     padding-top: 75px;
     padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 35px;
     margin: 0;
     color: #04724D;
 }
-.formHeader > p > a{
+.formHeader > p{
     padding-top: 75px;
     padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 30px;
     margin: 0;
 }
 .instructionHeader > h1{
     padding-top: 75px;
     padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 35px;
     margin: 0;
 }
-.instructionHeader > p > a{
+.instructionHeader > p{
     padding-top: 75px;
     padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 30px;
     margin: 0;
 }

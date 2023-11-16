@@ -6,16 +6,14 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleBtns.forEach(function (btn) {
         btn.addEventListener("click", function () {
             // parent element
-            var faqItem = this.closest(".faq-item"); // Use closest to find the closest ancestor with the class 'faq-item'
-            if (faqItem) {
-                faqItem.classList.toggle("active");
+            var faqItem = this.parentNode;
+            faqItem.classList.toggle("active");
 
-                // display the answer by toggling a class
-                var answer = faqItem.querySelector(".answer");
-                if (answer) {
-                    answer.classList.toggle("show");
-                }
-            }
+            // display the answer
+            var answer = faqItem.querySelector(".answer");
+            answer.style.display = answer.style.display === "none" ? "block" : "none";
         });
     });
 });
+
+

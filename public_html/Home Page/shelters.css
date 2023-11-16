@@ -54,6 +54,23 @@ h1 {
     height: auto;
 }
 
+#dropDown {
+    grid-area: dropDown;
+    width: 175px;
+    height: 50px;
+}
+
+#dropdown {
+    width: 175px;
+    height: 50px;
+    background-color: #F2F4F8; 
+    font-size: 16px;
+    border: none;
+    margin: 0;
+    border: 1px solid #DDE1E6;
+    text-align: center;
+}
+
 #zipCodeInput {
     grid-area: zipCodeInput;
     width: 250px;
@@ -135,3 +152,5 @@ button#moreResults:hover {
     margin-top: 20px;
     display: none;
 }
+
+
