@@ -159,7 +159,7 @@ img.logoImage {
     margin: 0;
     color: #04724D;
 }
-.formHeader > p > a{
+.formHeader > p{
     padding-top: 75px;
     padding-bottom: 75px;
     font-size: 30px;
@@ -171,7 +171,19 @@ img.logoImage {
     font-size: 35px;
     margin: 0;
 }
-.instructionHeader > p > a{
+.instructionHeader > p{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    margin: 0;
+}
+.information1 > p{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    margin: 0;
+}
+.information2 > p{
     padding-top: 75px;
     padding-bottom: 25px;
     font-size: 30px;
