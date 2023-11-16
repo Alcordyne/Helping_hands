@@ -18,7 +18,7 @@ body {
 
 #Title {
 /*    background-color: pink;*/
-    grid-area: Title; 
+    grid-area: Title;
 }
 
 h1 {
@@ -32,26 +32,14 @@ h1 {
 /*    background-color: yellow;*/
     grid-area: DropZipSearch;
     display: grid;
-    width: 700px;
-    grid-template-columns: 1fr 1fr 1fr;
+    width: auto;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
-        "dropDown zipCodeInput searchButton";
+        "zipCodeInput searchButton";
     padding: 25px;
     place-items: center;
     margin: 0 auto;
-}
-
-#Map {
-/*    background-color: green;*/
-    grid-area: Map;
-    text-align: center;
-    vertical-align: middle;
-}
-
-#Map > img {
-    width: 75%;
-    height: auto;
 }
 
 #zipCodeInput {
@@ -73,6 +61,18 @@ h1 {
 input.zipCode {
     padding: 0;
     height: 50px;
+}
+
+#Map {
+/*    background-color: green;*/
+    grid-area: Map;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#Map > img {
+    width: 75%;
+    height: auto;
 }
 
 #searchButton {
@@ -135,3 +135,5 @@ button#moreResults:hover {
     margin-top: 20px;
     display: none;
 }
+
+
