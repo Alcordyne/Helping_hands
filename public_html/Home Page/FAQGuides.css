@@ -97,8 +97,74 @@ button#LogIn{
 }
 
 /*----------FAQ Section Begins----------------*/
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
 
+.faq-section {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: center;
+    background-color: #f2f2f2; /* Light grey background */
+    padding: 20px; /* Add padding for better visibility */
+}
+
+
+h2 {
+    color: #04724D; /*h2 color as #04724D */
+}
+
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+
+.faq-item.active h3 {
+    background-color: #f2f2f2;
+    color: black;
+}
+
+
+.faq-item.active .answer {
+    display: block;
+}
+
+
+.faq-item h3 {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 0;
+}
+
+
+.toggle-btn {
+    font-size: 20px;
+}
+
+
+.answer {
+    display: none;
+    padding: 10px;
+    background-color: #fff;
+    color: black;
+}
+
+
+.answer.show {
+    display: block;
+}
 
 
 
