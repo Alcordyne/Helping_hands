@@ -7,93 +7,153 @@ body{
 
 /*----------------MISSION STATEMENT SECTION----------------*/
 
-/*The entire navigation bar: logo, 5 features, search bar, log in, and sign up*/
-nav{
-    width: 100%;
+nav {
+    display: grid;
+    height: 12vh;
+    grid-template-columns: 0.1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "Logo NavBar SearchAcc";
+    margin: 0 auto;
+}
+
+#Logo {
+    grid-area: Logo;
+    width: 300px;
     height: auto;
-    overflow: hidden;
-    background-color: white;
-    display: inline-block;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
 }
 
-/*ul for navigation bar*/
-nav > ul{
-    padding: 20px;
-    margin: 0;
-    list-style: none;
+img.logoImage {
+    height: auto;
+    width: 300px;
 }
 
-/*Helping Hands Logo to shift left*/
-li img{
-    float: left;
-    padding-left: 30px;
-    padding-right: 30px;
+#NavBar {
+    grid-area: NavBar;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
-/*Change contents outside Navigation bar for the 5 features*/
-nav > ul > li > a{
-    padding: 45px 0;
-    float: left;
-    text-align: center;
-    width: auto;
+#SearchAcc {
+    grid-area: SearchAcc;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+a {
     text-decoration: none;
     color: black;
-    margin-right: 50px;
+    font-size: 16px;
 }
 
-/*Change contents outside (the position) )Search Bar Input*/
-nav > ul > li > input{
-    float: right;
-    margin-top: 35px;
-    margin-left: 15px;
-}
-
-/*Change Search Bar design*/
-input.searchBar{
-    padding: 10px 40px;
-    border: 1px solid #D5D8DE;
-    background-color: #F2F4F8;
-}
-
-/*Change contents outside Sign up button*/
-li.signUp{
-    padding-right: 30px;
-    margin-top: 35px;
-    margin-left: 15px;
-    float: right;
-}
-
-/*Change Helping Hands Logo*/
-a.Logo{
-    padding: 0;
-}
-
-li a:hover{
+a:hover {
     color: #04724D;
 }
 
-/*Change contents Sign Up Button design*/
-button#SignUp{
-    padding: 10px 30px;
+#Shelters {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Food {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Job {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Health {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#FAQ {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#SignUp {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#SignUp > button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
     border: 2px solid #04724D;
     background-color: #04724D;
     color: white;
 }
 
-/*Change contents outside Log in button*/
-li.logIn{
-    padding:0;
-    margin-top: 35px;
-    margin-left: 15px;
-    float: right;
+#LogIn {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
 }
 
-/*Change contents Log In Button design*/
-button#LogIn{
-    padding: 10px 30px;
+#LogIn > button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
     border: 2px solid #04724D;
     background-color: transparent;
     color: #04724D;
+}
+
+#Search {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Search > button {
+    width: 75px;
+    height: 32px;
+    font-size: 16px;
+    border: 2px solid #04724D;
+    background-color: #04724D;
+    color: white;
+}
+
+#SearchInput {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#SearchInput > input {
+    padding: 0;
+    padding-left: 5px;
+    margin: 0;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid #D5D8DE;
+    background-color: #F2F4F8;
 }
 
 /*----------Homeless Form Section Begins----------------*/
