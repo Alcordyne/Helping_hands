@@ -11,7 +11,6 @@
     <body>
         <!--Navigation Bar-->
         <nav>
-            <nav>
             <div id="Logo"><a href="home.html"><img class="logoImage" src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></div>
             <div id="NavBar">
                 <div id="Shelters"><a href="shelters.html">Shelters</a></div>
@@ -30,24 +29,23 @@
         <!--END of Navigation Bar-->
         
        <!--Food Banks Section-->
-    <div id="Top">
+        <div id="Top">
             <div id="Title"><h1>Food Banks</h1></div>
-
-                    <div id="zipCodeInput">
-                        <input class="zipCode" type="text" placeholder="Zip Code">
-                    </div>
-
-                    <div id="searchButton">
-                        <button type="button" id="search" onclick="searchFoodBanks()">Find Food Banks</button>
-                    </div>
-                    <script>
-                        function searchFoodBanks() {
-                          document.getElementById("fourSearches").style.display = "block";
-                          document.getElementById("moreButton").style.display = "block";
-                        }
-                    </script>
-                       
+            <div id="DropZipSearch">
+                <div id="zipCodeInput">
+                    <input class="zipCode" type="text" placeholder="Zip Code">
+                </div>
+                <div id="searchButton">
+                    <button type="button" id="search" onclick="searchFoodBanks()">Find Food Banks</button>
+                </div>
+                <script>
+                    function searchFoodBanks() {
+                      document.getElementById("fourSearches").style.display = "block";
+                      document.getElementById("moreButton").style.display = "block";
+                    }
+                </script>  
             </div>
+            
             <div id="Map"><img src="map.png" alt="Map of food banks in Sacramento"></div>
         </div>
         <!-- End of Food Banks Section w/ Title and Map ONLY -->
