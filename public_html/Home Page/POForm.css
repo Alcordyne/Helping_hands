@@ -45,16 +45,6 @@ img.logoImage {
     margin-bottom: auto;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
-
-a:hover {
-    color: #04724D;
-}
-
 #Shelters {
     margin-top: auto;
     margin-bottom: auto;
