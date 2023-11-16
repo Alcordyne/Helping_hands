@@ -44,11 +44,6 @@ img.logoImage {
     margin-bottom: auto;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-    font-size: 16px;
-}
 
 a:hover {
     color: #04724D;
@@ -59,6 +54,9 @@ a:hover {
     margin-bottom: auto;
     display: inline-block;
     padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
 }
 
 #Food {
@@ -66,6 +64,9 @@ a:hover {
     margin-bottom: auto;
     display: inline-block;
     padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
 }
 
 #Job {
@@ -73,6 +74,9 @@ a:hover {
     margin-bottom: auto;
     display: inline-block;
     padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
 }
 
 #Health {
@@ -80,6 +84,9 @@ a:hover {
     margin-bottom: auto;
     display: inline-block;
     padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
 }
 
 #FAQ {
@@ -87,6 +94,9 @@ a:hover {
     margin-bottom: auto;
     display: inline-block;
     padding-right: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
 }
 
 #SignUp {
@@ -203,23 +213,41 @@ a:hover {
     margin: 0;
 }
 
-.briefResources{
-    padding-left: 350px;
-    padding-right: 350px;
-    display: flex;
-    justify-content: space-around; 
-    align-items: center;
-    flex-wrap: wrap; 
-    padding-bottom: 100px;
-}
-.resource {
+#briefResources{
+    background-color: pink;
+    display: grid;
+    height: 15vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "House ForkKnife Briefcase Heart";
+    margin: 0 auto;
     text-align: center;
-    margin: 20px; 
+    padding-bottom: 75px;
 }
 
-.resource img {
-    max-width: 100px; 
-    height: auto;
+#House {
+    grid-area: House;
+    text-align: center;
+    width: 75%;
+}
+
+#ForkKnife {
+    grid-area: ForkKnife;
+    text-align: center;
+    width: 75%;
+}
+
+#Briefcase {
+    grid-area: Briefcase;
+    text-align: center;
+    width: 75%;
+}
+
+#Heart {
+    grid-area: Heart;
+    text-align: center;
+    width: 75%;
 }
 /*----------------Footer----------------*/
 
