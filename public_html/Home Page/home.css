@@ -43,6 +43,10 @@ img.logoImage {
     font-size: 16px;
 }
 
+.navLinks:hover{
+    color: #04724D;
+}
+
 #SearchAcc {
     grid-area: SearchAcc;
     text-align: right;
