@@ -151,10 +151,6 @@ body {
     margin: 0;
     padding: 0;
 }
-.faq{
-    background-color: #F2F4F8;
-    display: flex;
-}
 
 .faq-section {
     max-width: 800px;
