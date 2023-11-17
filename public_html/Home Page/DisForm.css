@@ -1,0 +1,200 @@
+body{
+    margin: 0;
+    padding:0;
+    background: white;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*----------------MISSION STATEMENT SECTION----------------*/
+
+nav {
+    display: grid;
+    height: 12vh;
+    grid-template-columns: 0.1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "Logo NavBar SearchAcc";
+    margin: 0 auto;
+}
+
+#Logo {
+    grid-area: Logo;
+    width: 300px;
+    height: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 10px;
+}
+
+img.logoImage {
+    height: auto;
+    width: 300px;
+}
+
+#NavBar {
+    grid-area: NavBar;
+    text-align: left;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#SearchAcc {
+    grid-area: SearchAcc;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+#Shelters {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Food {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Job {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Health {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#FAQ {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#SignUp {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#SignUp > button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    border: 2px solid #04724D;
+    background-color: #04724D;
+    color: white;
+}
+
+#LogIn {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#LogIn > button {
+    width: 100px;
+    height: 40px;
+    font-size: 16px;
+    border: 2px solid #04724D;
+    background-color: transparent;
+    color: #04724D;
+}
+
+#Search {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#Search > button {
+    width: 75px;
+    height: 32px;
+    font-size: 16px;
+    border: 2px solid #04724D;
+    background-color: #04724D;
+    color: white;
+}
+
+#SearchInput {
+    margin-top: auto;
+    margin-bottom: auto;
+    display: inline-block;
+    padding-right: 10px;
+}
+
+#SearchInput > input {
+    padding: 0;
+    padding-left: 5px;
+    margin: 0;
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+    border: 1px solid #D5D8DE;
+    background-color: #F2F4F8;
+}
+
+/*----------Homeless Form Section Begins----------------*/
+
+.disForm{
+    height: 100%;
+    width: 100%;
+    padding-bottom: 100px
+    padding-left: 25px;
+}
+.formHeader > h1{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 35px;
+    margin: 0;
+    color: #04724D;
+}
+.formHeader > p{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 25px;
+    margin: 0;
+}
+.instructionHeader > h1{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 35px;
+    margin: 0;
+}
+.instructionHeader > p{
+    padding-top: 75px;
+    padding-bottom: 25px;
+    font-size: 25px;
+    margin: 0;
+}
+    
+/*----------Homeless Form Section Ends-----------------*/
+
+
+/*----------------Footer----------------*/
+
+/*changes background of footer*/
+footer {
+    background-color: #666; 
+    color: #fff; 
+    padding: 20px 0; 
+    text-align: center;
+}
+
+/*centers footer*/
+.footer-content {
+    max-width: 500px; 
+    margin: 0 auto; 
+}
