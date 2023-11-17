@@ -157,9 +157,11 @@ body {
 }
 
 .faq-section {
+    max-width: 800px;
+    margin: 50px auto;
     text-align: center;
-    background-color: #F2F4F8;
-    display: flex;
+    background-color: #f2f2f2; /* Light grey background */
+    padding: 20px; /* Add padding for better visibility */
 }
 
 
