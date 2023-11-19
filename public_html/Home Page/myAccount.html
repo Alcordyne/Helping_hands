@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helping Hands - My Account</title>
+    <link rel="stylesheet" href="myAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-w4u5+gibdy3UdI5t/1mR6zM/RVpNdeGi3f1K8bdYc6b3g/Nnq7+bFHcPk6Ln6jvT" crossorigin="anonymous">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a class="Logo" href="home.html"><img src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></li>
+            <li><a href="shelters.html">Shelters</a></li>
+            <li><a href="foodBanks.html">Food Banks</a></li>
+            <li><a href="jobAssistance.html">Job Assistance</a></li>
+            <li><a href="healthcare.html">Healthcare</a></li>
+            <li><a href="FAQGuides.html">FAQ & Guides</a></li>
+            <li class="search"><button onclick="search()" id="Search"><i class="fas fa-search"></i></button></li>
+            <li><input type="text" id="searchInput" placeholder="Search for..."></li>
+            <li><a href="#" id="myAccountTab"><i class="fas fa-user"></i> My Account</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- the Left Tab - User Info -->
+        <div class="tab" id="userInfoTab">
+            <h2>User Info</h2>
+
+            <!-- User Details -->
+            <h3>User Details</h3>
+
+            <!-- First Name and Last Name input boxes -->
+            <div class="userInput">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName">
+            </div>
+
+            <div class="userInput">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName">
+            </div>
+
+            <!-- Email input box -->
+            <div class="userInput">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+            </div>
+        </div>
+
+        <!-- the Right Tab - Saved Resources -->
+        <!-- Right Tab - Saved Resources -->
+<div class="tab" id="savedResourcesTab">
+    <h2>Saved Resources</h2>
+
+    <!-- Shelters -->
+    <div class="resourceRow">
+        <div class="resource">
+            <h3>Salvation Army</h3>
+            <p>1200 N B St, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Shelters Inc</h3>
+            <p>700 N 5th Suite 200, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Maryhouse</h3>
+            <p>1321 N C St, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <!-- Add fourth shelter here -->
+    </div>
+
+    <!-- Food Banks -->
+    <div class="resourceRow">
+        <div class="resource">
+            <h3>Wind Youth Services</h3>
+            <p>815 S St, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Union Gospel Mission</h3>
+            <p>400 Bannon St, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Loaves & Fishes Dining Room</h3>
+            <p>1351 North C Street Sacramento, CA, 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Salvation Army</h3>
+            <p>1200 N B St, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+    </div>
+
+    <!-- Healthcare Facilities -->
+    <div class="resourceRow">
+        <div class="resource">
+            <h3>El Hogar Community Services, Inc. (C.O.R.E. Mariposa)</h3>
+            <p>600 Bercut Dr, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>The Willow Clinic</h3>
+            <p>1400 N A St Bldg A, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Genesis Mental Health Loaves & Fishes</h3>
+            <p>401 North 12th Street, Sacramento, CA, 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+
+        <div class="resource">
+            <h3>Mercy Clinic Loaves & Fishes</h3>
+            <p>1321 N C St #22, Sacramento, CA 95811</p>
+            <a href="#" class="moreInfo">More Info</a>
+        </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Helping Hands @ 2023. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Script for tab switching -->
+    <script src="myAccount.js"></script>
+</body>
+</html>

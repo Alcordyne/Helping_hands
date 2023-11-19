@@ -1,0 +1,94 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-color: white;
+    display: inline-block;
+    border-bottom: 2px solid #D5D8DE;
+}
+
+nav > ul {
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+    display: flex; /* Align items in a row */
+    align-items: center; /* Vertically center items */
+    justify-content: space-between; /* Spread items horizontally */
+}
+
+li img {
+    height: auto;
+    width: 250px; /* Slightly larger than the tabs */
+    padding-top: 4%;
+}
+
+nav > ul > li > a {
+    padding: 45px 0;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin-right: 10px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav > ul > li > a:hover {
+    color: #04724D;
+}
+
+#SearchInput {
+    padding: 15px 80px; /* Adjusted padding for a bigger and wider search bar */
+    border: 2px solid #D5D8DE;
+    background-color: #D5D8DE; /* Grey background */
+    margin-right: 10px;
+    margin-top: 35px;
+    color: #444; /* Darker grey text */
+    width: 700px; /* Wider search bar */
+    transition: background-color 0.3s;
+}
+
+
+#NavToggle {
+    margin-top: 35px;
+    margin-left: 10px;
+    background-color: black;
+    height: 3px;
+    width: 30px;
+}
+
+li#MyAccount {
+    margin-top: 35px;
+    margin-right: 10px;
+    float: right;
+}
+
+button#MyAccount {
+    padding: 20px 40px; /* Larger My Account tab */
+    border: 2px solid #04724D; /* Green border */
+    background-color: white; /* White background */
+    color: #04724D; /* Green text */
+    transition: color 0.3s, background-color 0.3s;
+}
+
+button#MyAccount:hover {
+    color: white; /* White text */
+    background-color: #04724D; /* Green background */
+}
+a.moreInfo {
+    color: #04724D; /* Green text color */
+    text-decoration: none;
+    position: relative;
+}
+
+a.moreInfo::after {
+    content: '\2192'; /* Unicode arrow character (right arrow) */
+    margin-left: 5px; /* Adjust the spacing between text and arrow */
+    color: #04724D; /* Green text color */
+}
