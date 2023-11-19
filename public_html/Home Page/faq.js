@@ -6,14 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleBtns.forEach(function (btn) {
         btn.addEventListener("click", function () {
             // parent element
-            var faqItem = this.parentNode;
+            var faqItem = this.closest(".faq-item");
             faqItem.classList.toggle("active");
 
-            // display the answer
+            // display the answer by toggling the .show class
             var answer = faqItem.querySelector(".answer");
-            answer.style.display = answer.style.display === "none" ? "block" : "none";
+            answer.classList.toggle("show");
         });
     });
 });
-
-

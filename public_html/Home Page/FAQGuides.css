@@ -110,21 +110,19 @@ body {
     text-align: center;
     background-color: #f2f2f2; /* Light grey background */
     padding: 20px; /* Add padding for better visibility */
+    position: relative; /* Add position relative */
+    overflow: hidden; /* Ensure child elements don't overflow */
 }
-
-
-h2 {
-    color: #04724D; /*h2 color as #04724D */
-}
-
 
 .faq-item {
+    width: calc(100% - 100px); /* Full width with padding adjustment */
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #fff;
+    transition: transform 0.3s ease; /* Add transition for a smoother effect */
 }
 
 
@@ -146,6 +144,7 @@ h2 {
     justify-content: space-between;
     padding: 10px;
     margin: 0;
+    width: 90%;
 }
 
 
@@ -160,8 +159,13 @@ h2 {
     background-color: #fff;
     color: black;
 }
-
-
+.faq-section:after {
+    content: '';
+    display: table;
+    clear: both;
+    width: 100%; /* Full width to extend the background */
+}
+/* following rule for the .show class */
 .answer.show {
     display: block;
 }
