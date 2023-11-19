@@ -145,53 +145,45 @@ img.logoImage {
     border: 1px solid #D5D8DE;
     background-color: #F2F4F8;
 }
-/*----------PO Form Section Begins----------------*/
 
-.poForm{
-    height: auto;
+/*----------Homeless Form Section Begins----------------*/
+
+.disForm{
+    height: 100%;
     width: 100%;
     padding-bottom: 100px;
-    padding-left: 25px;
 }
 .formHeader > h1{
     padding-top: 75px;
     padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 35px;
     margin: 0;
     color: #04724D;
 }
 .formHeader > p{
     padding-top: 75px;
-    padding-bottom: 75px;
+    padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 25px;
     margin: 0;
 }
 .instructionHeader > h1{
     padding-top: 75px;
     padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 35px;
     margin: 0;
 }
 .instructionHeader > p{
     padding-top: 75px;
     padding-bottom: 25px;
-    font-size: 25px;
-    margin: 0;
-}
-.information1 > p{
-    padding-top: 75px;
-    padding-bottom: 25px;
-    font-size: 25px;
-    margin: 0;
-}
-.information2 > p{
-    padding-top: 75px;
-    padding-bottom: 25px;
+    padding-left: 25px;
     font-size: 25px;
     margin: 0;
 }
     
-/*----------PO Form Section Ends-----------------*/
+/*----------Homeless Form Section Ends-----------------*/
 
 
 /*----------------Footer----------------*/

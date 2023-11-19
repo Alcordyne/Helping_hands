@@ -5,24 +5,27 @@
         <meta name = "viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="FAQGuides.css">
         <link rel="stylesheet" href="POForm.css">
+        <link rel="stylesheet" href="home.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
     
     <body>
         <!--Navigation Bar-->
         <nav>
-            <ul>
-                <li><a class="Logo" href="home.html"><img src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></li>
-                <li><a href="shelters.html">Shelters</a></li>
-                <li><a href="foodBanks.html">Food Banks</a></li>
-                <li><a href="jobAssistance.html">Job Assistance</a></li>
-                <li><a href="healthcare.html">Healthcare</a></li>
-                <li><a href="FAQGuides.html">FAQ & Guides</a></li>
-                <li class="signUp"><button type="button" id="SignUp">Sign Up</button></li>
-                <li class="logIn"><button type="button" id="LogIn">Log In</button></li>
-                <li class="search"><button onclick="search()" id="Search">Search</button></li>
-                <li><input type="text" id="searchInput" placeholder="Search for..."></li> 
-            </ul>  
+            <div id="Logo"><a href="home.html"><img class="logoImage" src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></div>
+            <div id="NavBar">
+                <div id="Shelters"><a href="shelters.html" class="navLinks">Shelters</a></div>
+                <div id="Food"><a href="foodBanks.html" class="navLinks">Food Banks</a></div>
+                <div id="Job"><a href="jobAssistance.html" class="navLinks">Job Assistance</a></div>
+                <div id="Health"><a href="healthcare.html" class="navLinks">Healthcare</a></div>
+                <div id="FAQ"><a href="FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
+            </div>
+            <div id="SearchAcc">
+                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="search()">Search</button></div>
+                <div id="LogIn"><button type="button">Log In</button></div>
+                <div id="SignUp"><button type="button">Sign Up</button></div>
+            </div>
         </nav>
         <!--END of Navigation Bar-->
         
@@ -36,13 +39,17 @@
                 <h1>Instructional Guide</h1>
                 <p>Below is a link to the form that needs to be filled out: <br/>
                 <a href="https://about.usps.com/forms/ps1093.pdf">P.O. Box Form (Form 1093)</a> <br/>
-                This link also includes some pages that provides instructions on how the P.O. box works and how to fill out the form. <br/>
-                If the pages do not provide a clear enough intruction here is a video that could help fill out this form: <br/>
-                <a href="https://www.youtube.com/watch?v=Rry0iBLcyDQ&t=408s&ab_channel=simply.share">How to fill out Form 1093 - Video</a><br/>
-                In addition to a website that provides some useful guides for Form 1093: <br/>
+                This link also includes some pages that provides instructions on how the P.O. box works and how to fill out the form. <br/></p>
+            </div>
+            <div class="information1">
+                <p>If the pages do not provide a clear enough instruction here is a video that could help fill out this form: <br/>
+                <a href="https://www.youtube.com/watch?v=Rry0iBLcyDQ&t=408s&ab_channel=simply.share">How to fill out Form 1093 - Video</a></p>
+            </div>
+            <div class="information2">
+                <p>In addition to a website that provides some useful guides for Form 1093: <br/>
                 <a href="https://formspal.com/pdf-forms/other/ps-form-1093-a/">PS Form 1093 - FormsPal</a></p>
-              </div>
-         </div>
+           </div>
+        </div>
         <!--END of PO Form Section-->
         
         <!--Footer-->

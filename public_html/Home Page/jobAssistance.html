@@ -10,18 +10,20 @@
     <body>
         <!--Navigation Bar-->
         <nav>
-            <ul>
-                <li><a class="Logo" href="home.html"><img src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></li>
-                <li><a href="shelters.html">Shelters</a></li>
-                <li><a href="foodBanks.html">Food Banks</a></li>
-                <li><a href="jobAssistance.html">Job Assistance</a></li>
-                <li><a href="healthcare.html">Healthcare</a></li>
-                <li><a href="FAQGuides.html">FAQ & Guides</a></li>
-                <li class="signUp"><button type="button" id="SignUp">Sign Up</button></li>
-                <li class="logIn"><button type="button" id="LogIn">Log In</button></li>
-                <li class="search"><button onclick="search()" id="Search">Search</button></li>
-                <li><input type="text" id="searchInput" placeholder="Search for..."></li> 
-            </ul>  
+            <div id="Logo"><a href="home.html"><img class="logoImage" src="Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></div>
+            <div id="NavBar">
+                <div id="Shelters"><a href="shelters.html" class="navLinks">Shelters</a></div>
+                <div id="Food"><a href="foodBanks.html" class="navLinks">Food Banks</a></div>
+                <div id="Job"><a href="jobAssistance.html" class="navLinks">Job Assistance</a></div>
+                <div id="Health"><a href="healthcare.html" class="navLinks">Healthcare</a></div>
+                <div id="FAQ"><a href="FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
+            </div>
+            <div id="SearchAcc">
+                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="search()">Search</button></div>
+                <div id="LogIn"><button type="button">Log In</button></div>
+                <div id="SignUp"><button type="button">Sign Up</button></div>
+            </div>
         </nav>
         <!--END of Navigation Bar-->
         
@@ -30,42 +32,42 @@
             <div id="jrTitle">Job Assistance</div>
             <div id="jrList">
                 <div id="jrElement">
-                    <div id="jrImage"></div>
+                    <img id="jrImage" src="./job-assistance-images/indeed.png">
                     <p id="jrElementTitle">Indeed Career Guide</p>
                     <p id="jrDescription">Indeed career guide has lots of useful information about finding a job, making a resume/cover letter, and preparation for interviews.</p>
                     <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                     <btn id="moreInfoBtn">More Info &#8594;</btn>
                 </div>
                 <div id="jrElement">
-                    <div id="jrImage"></div>
+                    <img id="jrImage" src="./job-assistance-images/livecareer.png">
                     <p id="jrElementTitle">Live Career</p>
                     <p id="jrDescription">Livecareer is a tool for making the perfect resume and cover letter, as well as providing current job search advice.</p>
                     <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                     <btn id="moreInfoBtn">More Info &#8594;</btn>
                 </div>
                 <div id="jrElement">
-                    <div id="jrImage"></div>
+                    <img id="jrImage" src="./job-assistance-images/cara.jpg">
                     <p id="jrElementTitle">Cara Collective</p>
                     <p id="jrDescription">Cara Collective is a platform for both employers and employees as well as a network of 50+ employment partners in different industries. It offers training and courses in various industries like OSHA, food service, and commercial cleaning.</p>
                     <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                     <btn id="moreInfoBtn">More Info &#8594;</btn>
                 </div>
                 <div id="jrElement">
-                    <div id="jrImage"></div>
+                    <img id="jrImage" src="./job-assistance-images/edd.jpg">
                     <p id="jrElementTitle">Employment Development Department</p>
                     <p id="jrDescription">The Employment Development Department offers resources like assistance with the job search, labor market information, and claims.</p>
                     <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                     <btn id="moreInfoBtn">More Info &#8594;</btn>
                 </div>
                 <div id="jrElement">
-                    <div id="jrImage"></div>
+                    <img id="jrImage" src="./job-assistance-images/dep of labor.png">
                     <p id="jrElementTitle">U.S. Department of Labor</p>
                     <p id="jrDescription">The US Department of Labor is a federal agency that provides job training, statistics related to the job market& income, and protects the rights of workers/retirees.</p>
                     <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                     <btn id="moreInfoBtn">More Info &#8594;</btn>
                 </div>
                 <div id="jrElement">
-                    <div id="jrImage"></div>
+                    <img id="jrImage" src="./job-assistance-images/aptitudetest.jpg">
                     <p id="jrElementTitle">Practice Aptitude Test</p>
                     <p id="jrDescription">Practice aptitude tests is a platform that allows job candidates to practice for interviews by testing their numeracy, logic, and problem solving skills.</p>
                     <btn id="bookmarkBtn">&#9734 Bookmark</btn>
