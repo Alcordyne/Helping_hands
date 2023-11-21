@@ -105,34 +105,39 @@ img.logoImage {
 }
 
 #SignUp {
-    margin-top: auto;
-    margin-bottom: auto;
     display: inline-block;
-    padding-right: 10px;
-}
-
-#SignUp > button {
+    margin-right: 10px;
     width: 100px;
     height: 40px;
-    font-size: 16px;
     border: 2px solid #04724D;
     background-color: #04724D;
+    text-align: center;
+}
+
+#SignUp > a {
+    line-height: 40px;
+    vertical-align: middle;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
     color: white;
 }
 
 #LogIn {
-    margin-top: auto;
-    margin-bottom: auto;
     display: inline-block;
-    padding-right: 10px;
-}
-
-#LogIn > button {
+    margin-right: 10px;
     width: 100px;
     height: 40px;
-    font-size: 16px;
     border: 2px solid #04724D;
     background-color: transparent;
+    text-align: center;
+}
+
+#LogIn > a {
+    line-height: 40px;
+    font-size: 16px;
+    vertical-align: middle;
+    text-decoration: none;
     color: #04724D;
 }
 
