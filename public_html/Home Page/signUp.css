@@ -22,6 +22,7 @@ body {
 
 img {
     width: 100%;
+    margin: 0;
 }
 
 #Title {
@@ -91,6 +92,7 @@ p {
 
 #logIn:hover {
     color: #04724D;
+    text-decoration: underline;
     cursor: pointer; 
 }
 
