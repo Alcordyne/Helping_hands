@@ -72,6 +72,7 @@ input.zipCode {
 .Map > iframe{
     width: 80%;
     height: 500px;
+}
 #searchButton {
     grid-area: searchButton;
     width: 150px;
