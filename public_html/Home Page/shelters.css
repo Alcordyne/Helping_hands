@@ -42,18 +42,16 @@ h1 {
     margin: 0 auto;
 }
 
-#Map {
+.Map {
 /*    background-color: green;*/
     grid-area: Map;
     text-align: center;
     vertical-align: middle;
 }
-
-#Map > img {
-    width: 55%;
-    height: auto;
+.Map > iframe{
+    width: 80%;
+    height: 500px;
 }
-
 #dropDown {
     grid-area: dropDown;
     width: 175px;
