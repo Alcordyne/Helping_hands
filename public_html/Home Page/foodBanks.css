@@ -63,18 +63,15 @@ input.zipCode {
     height: 50px;
 }
 
-#Map {
+.Map {
 /*    background-color: green;*/
     grid-area: Map;
     text-align: center;
     vertical-align: middle;
 }
-
-#Map > img {
-    width: 55%;
-    height: auto;
-}
-
+.Map > iframe{
+    width: 80%;
+    height: 500px;
 #searchButton {
     grid-area: searchButton;
     width: 150px;
