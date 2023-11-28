@@ -72,20 +72,13 @@ input.zipCode {
 .Map > iframe{
     width: 80%;
     height: 500px;
+}
 #searchButton {
     grid-area: searchButton;
     width: 150px;
     height: 50px;
     place-items: center;
 }
-
-#searchButton {
-    grid-area: searchButton;
-    width: 150px;
-    height: 50px;
-    place-items: center;
-}
-
 button#search {
     font-size: 16px;
     width: 150px;
