@@ -99,7 +99,7 @@ img.logoImage {
     color: black;
     font-size: 16px;
 }
-#LogIn {
+#MyAccount {
     display: inline-block;
     margin-right: 10px;
     width: 100px;
@@ -109,7 +109,7 @@ img.logoImage {
     text-align: center;
 }
 
-#LogIn > a {
+#MyAccount > a {
     line-height: 40px;
     font-size: 16px;
     vertical-align: middle;
