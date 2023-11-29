@@ -1,10 +1,10 @@
 // Search javascript
 
 var pages = [
-  { title: "Student Homelessness Certification Form", content: "Used by multiple agencies to affirm that a homeless youths who are under 25 years of age and can verify their status to obtain a fee waiver for a High School Equivalency Test"},
-  { title: "Disability Certification Form (SSF)", content: "Used to affirm that an individual is disabled and is used only for the purpose of qualifying for housing assistance "},
-  { title: "Birth Certificate for Homelessness", content: "Individuals are provided with the opportunity for a fee-exempt copy of a birth record"},
-  { title: "P.O. Box Form (Form 1093)", content: "Provide the opportunity for individuals who are in need of a P.O. Box (Post Office Box)."},
+  { title: "Student Homelessness Certification Form", content: "Fee waiver for a High School Equivalency Test"},
+  { title: "Disability Certification Form (SSF)", content: "Uused only for the purpose of qualifying for housing assistance "},
+  { title: "Birth Certificate for Homelessness", content: "Fee-exempt copy of a birth record"},
+  { title: "P.O. Box Form (Form 1093)", content: "For individuals who are in need of a P.O. Box (Post Office Box)."},
   { title: "Guides", content: "Frequently asked questions and guides"},
   { title: "Job Assistance", content: "Resume support and the best practices to get a job."},
 ];
