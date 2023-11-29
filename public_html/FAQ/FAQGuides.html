@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="../Home/home.css">
         <link rel="stylesheet" href="FAQGuides.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     </head>
     
     <body>
@@ -19,11 +20,14 @@
                 <div id="FAQ"><a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
             </div>
             <div id="SearchAcc">
-                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
-                <div id="Search"><button onclick="search()">Search</button></div>
+                <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="performSearch()">Search</button></div>
+                <ul id="results"></ul>
                 <div id="LogIn"><a href="../Account/logIn.html">Log In</a></div>
                 <div id="SignUp"><a href="../Account/signUp.html">Sign Up</a></div>
             </div>
+
+            <script src="../Function/search.js"></script>
         </nav>
         <!--END of Navigation Bar-->
 
