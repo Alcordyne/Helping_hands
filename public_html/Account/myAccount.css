@@ -163,7 +163,7 @@ img.logoImage {
     display: grid;
     grid-template-colums: repeat(2, 1fr);
 }
-h2 {
+.tab h2 {
     background-color: #04724D;
     text-align: center;
     padding: 15px 0;
