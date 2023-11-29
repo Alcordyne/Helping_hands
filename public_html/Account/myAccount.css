@@ -162,7 +162,8 @@ img.logoImage {
 }
 .tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
+  border: 2px solid #04724D;
 }
 h3 {
   background-color: #04724D;
