@@ -19,7 +19,7 @@ var fuseOptions = {
 var fuse = new Fuse(pages, fuseOptions);
 
 // Function to search pages
-function performSearch() {
+function search() {
     var searchTerm = document.getElementById("search").value;
     var resultsList = document.getElementById("results");
 
