@@ -26,20 +26,20 @@
     </nav>
 
     <!-- Main Content -->
-    <div class="content">
+    <div class="container">
         <!-- the Left Tab - User Info -->
-        <div class="tab" id="userInfoTab">
-            <h2>User Info</h2>
-
-            <!-- User Details -->
-            <h3>User Details</h3>
-
+        <div class="tab">
+            <h2 class="active">User Info</h2>
+            <h2>Saved Resources</h2>
+        </div>
             <!-- First Name and Last Name input boxes -->
+        <div class="tab-content">
+            <div class="active">
+            <h4>User Details</h4>
             <div class="userInput">
                 <label for="firstName">First Name:</label>
                 <input type="text" id="firstName" name="firstName">
             </div>
-
             <div class="userInput">
                 <label for="lastName">Last Name:</label>
                 <input type="text" id="lastName" name="lastName">
@@ -49,14 +49,11 @@
             <div class="userInput">
                 <label for="email">Email:</label>
                 <input type="text" id="email" name="email">
+            </div>   
             </div>
-        </div>
-
-        <!-- the Right Tab - Saved Resources -->
-        <!-- Right Tab - Saved Resources -->
-<div class="tab" id="savedResourcesTab">
-    <h2>Saved Resources</h2>
-
+    <!-- Right Tab - Saved Resources -->
+        <div>
+         <h2>Saved Resources</h2>
     <!-- Shelters -->
     <div class="resourceRow">
         <div class="resource">
@@ -133,8 +130,8 @@
             <a href="#" class="moreInfo">More Info</a>
         </div>
     </div>
+        </div>
 </div>
-
     <!-- Footer -->
     <footer>
         <div class="footer-content">
