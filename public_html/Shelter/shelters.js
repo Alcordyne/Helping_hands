@@ -1,15 +1,13 @@
 function initMap() {
   // Create the map.
-  var map = new
-    google.maps.Map(document.getElementById('map'),{
-      center: {lat: 38.5816, lng: -121.4944},
-      zoom: 12,
+  const sac = { lat: 38.5816, lng: -121.4944 };
+  const map = new google.maps.Map(document.getElementById("map"), {
+    center: sac,
+    zoom: 12,
   });
-  
-  // Declare getNextPage outside the function to make it accessible globally
+  // Create the places service.
+  const service = new google.maps.places.PlacesService(map);
   let getNextPage;
-  
-  // Declare moreButton outside the function to make it accessible globally
   const moreButton = document.getElementById("more");
 
   moreButton.onclick = function () {
@@ -18,6 +16,23 @@ function initMap() {
       getNextPage();
     }
   };
+
+  // Perform a nearby search.
+  service.nearbySearch(
+    { location: pyrmont, radius: 500, type: "store" },
+    (results, status, pagination) => {
+      if (status !== "OK" || !results) return;
+
+      addPlaces(results, map);
+      moreButton.disabled = !pagination || !pagination.hasNextPage;
+      if (pagination && pagination.hasNextPage) {
+        getNextPage = () => {
+          // Note: nextPage will call the same handler function as the initial call
+          pagination.nextPage();
+        };
+      }
+    },
+  );
 }
 
 function searchShelters() {
