@@ -18,11 +18,14 @@
                 <div id="Health"><a href="../Healthcare/healthcare.html" class="navLinks">Healthcare</a></div>
                 <div id="FAQ"><a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
             </div>
-            <div id="SearchAcc">
-                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
-                <div id="Search"><button onclick="search()">Search</button></div>
+             <div id="SearchAcc">
+                <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="performSearch()">Search</button></div>
+                <ul id="results"></ul>
                 <div id="MyAccount"><a href="../Account/myAccount.html">My Account</a></div>
             </div>
+
+            <script src="../Function/search.js"></script>
     </nav>
 
     <!-- Main Content -->
