@@ -213,6 +213,34 @@ img.logoImage {
     width: 400px;
 }
 
+/*----------------Results----------------*/
+
+#results {
+    display: none; /* Initially hidden */
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #F2F4F8;
+}
+
+#results li {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: White;
+}
+
+#results a {
+    text-decoration: none;
+    color: DimGray;
+}
+
+#results a:hover {
+    text-decoration: underline;
+}
+
 /*----------------RESOURCES OFFERED SECTION (AT THE BOTTOM)----------------*/
 
 .resourceHeader > h1 {
