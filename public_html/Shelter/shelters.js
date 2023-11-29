@@ -5,34 +5,6 @@ function initMap() {
     center: sac,
     zoom: 12,
   });
-  // Create the places service.
-  const service = new google.maps.places.PlacesService(map);
-  let getNextPage;
-  const moreButton = document.getElementById("more");
-
-  moreButton.onclick = function () {
-    moreButton.disabled = true;
-    if (getNextPage) {
-      getNextPage();
-    }
-  };
-
-  // Perform a nearby search.
-  service.nearbySearch(
-    { location: pyrmont, radius: 500, type: "store" },
-    (results, status, pagination) => {
-      if (status !== "OK" || !results) return;
-
-      addPlaces(results, map);
-      moreButton.disabled = !pagination || !pagination.hasNextPage;
-      if (pagination && pagination.hasNextPage) {
-        getNextPage = () => {
-          // Note: nextPage will call the same handler function as the initial call
-          pagination.nextPage();
-        };
-      }
-    },
-  );
 }
 
 function searchShelters() {
