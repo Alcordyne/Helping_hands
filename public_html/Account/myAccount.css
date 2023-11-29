@@ -150,47 +150,54 @@ img.logoImage {
     border: 1px solid #D5D8DE;
     background-color: #F2F4F8;
 }
-/*----------------Footer----------------*/
 .container {
-    width: 90%;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 120px;
-    background-color: #ffffff;
-    border: 2px solid #04724D;
-.tab {
-    display: grid;
-    grid-template-colums: repeat(2, 1fr);
+  width: 90%;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 120px;
+  background-color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 2px solid #04724D;
 }
-.tab h2 {
-    background-color: #04724D;
-    text-align: center;
-    padding: 15px 0;
-    cursor: pointer;
-    font-weight: 600;
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+h3 {
+  background-color: #04724D;
+  text-align: center;
+  padding: 15px 0;
+  cursor: pointer;
+  font-weight: 600;
 }
 .tab-content {
-    background-color: #ffffff;
-    padding: 50px 40px;
+  background-color: #ffffff;
+  padding: 50px 40px;
 }
-.tab-content > h4 {
-    font-size: 28px;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #000108;
-    font-weight: 600;
+.tab-content h4 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #000108;
+  font-weight: 600;
+}
+.tab-content p {
+  text-align: justify;
+  line-height: 1.9;
+  letter-spacing: 0.4px;
+  color: #202238;
 }
 .tab-content div {
-    display: none;
+  display: none;
 }
 .tab-content .active {
-    display: block;
+  display: block;
 }
-.tab .active {
-    background-color: #ffffff;
-    color: #04724D;
+.tabs .active {
+  background-color: #ffffff;
+  color: #04724D;
 }
+/*----------------Footer----------------*/
 /*changes background of footer*/
 footer {
     background-color: #666; 
