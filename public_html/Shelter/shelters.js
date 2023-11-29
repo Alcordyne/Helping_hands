@@ -1,9 +1,9 @@
 function initMap() {
   // Create the map.
-  const sacramento = new google.maps.LatLng(38.575764, -121.478851);
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: sacramento,
-    zoom: 12,
+  var map = new
+    google.maps.Map(document.getElementById('map'),{
+      center: {lat: 38.5816, lng: -121.4944},
+      zoom: 12,
   });
   
   // Declare getNextPage outside the function to make it accessible globally
