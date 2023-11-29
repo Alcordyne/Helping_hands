@@ -12,7 +12,7 @@ body {
     grid-template-areas:
         "Title"
         "DropZipSearch"
-        "Map";
+        "map";
     margin: 0 auto;
 }
 
@@ -42,16 +42,16 @@ h1 {
     margin: 0 auto;
 }
 
-.Map {
+#map {
 /*    background-color: green;*/
-    grid-area: Map;
+    grid-area: map;
     text-align: center;
     vertical-align: middle;
-}
-.Map > iframe{
-    width: 80%;
+    width: 700px;
     height: 500px;
+    margin: 0 auto;
 }
+
 #dropDown {
     grid-area: dropDown;
     width: 175px;
