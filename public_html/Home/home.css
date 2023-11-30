@@ -105,41 +105,23 @@ img.logoImage {
     font-size: 16px;
 }
 
-#SignUp {
+#signInButton {
     display: inline-block;
     margin-right: 10px;
-    width: 100px;
-    height: 40px;
-    border: 2px solid #04724D;
-    background-color: #04724D;
-    text-align: center;
-    transition: background-color 0.3s, color 0.3s;
-}
-#SignUp:hover {
-    background-color: #005236;
-}
-#SignUp > a {
-    line-height: 40px;
-    vertical-align: middle;
-    font-size: 16px;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-}
-
-/* #signInButton {
-    display: inline-block;
-    margin-right: 10px;
-    width: 100px;
+    width: 150px;
     height: 40px;
     border: 2px solid #04724D;
     background-color: transparent;
+    color: #04724D;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
-} */
-/* #signInButton:hover {
+}
+
+#signInButton:hover {
      background-color: #04724D;
-} */
+     color: white;
+}
+
 #signInButton > a {
     line-height: 40px;
     font-size: 16px;
@@ -148,6 +130,7 @@ img.logoImage {
     color: #04724D;
     transition: color 0.3s;
 }
+
 #signInButton:hover > a {
     color: white;
 }
@@ -177,6 +160,7 @@ img.logoImage {
 #MyAccount:hover > a {
     color: white;
 }
+
 #Search {
     margin-top: auto;
     margin-bottom: auto;
@@ -193,6 +177,7 @@ img.logoImage {
     color: white;
     transition: background-color 0.3s, color 0.3s;
 }
+
 #Search:hover > button {
     background-color: #005236;
 }
