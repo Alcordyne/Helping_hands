@@ -8,7 +8,6 @@
         <link rel="preconnect" href="https://fonts.googleapis.com"> 
         <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
         <script src="../Shelters/shelters.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
     </head>
     
     <body>
@@ -23,14 +22,11 @@
                 <div id="FAQ"><a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
             </div>
             <div id="SearchAcc">
-                <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
-                <div id="Search"><button onclick="performSearch()">Search</button></div>
-                <ul id="results"></ul>
+                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="search()">Search</button></div>
                 <div id="LogIn"><a href="../Account/logIn.html">Log In</a></div>
                 <div id="SignUp"><a href="../Account/signUp.html">Sign Up</a></div>
             </div>
-
-            <script src="../Function/search.js"></script>
         </nav>
         <!-- END of Navigation Bar -->
         
@@ -39,12 +35,30 @@
         <div id="Top">
             <div id="Title"><h1>Shelters</h1></div>
             
+            <div id="DropZipSearch">
+                    <div id="dropDown">
+                        <select id = "dropdown" onchange = "selectShelter()">
+                          <option>Shelters</option>
+                          <option>Domestic Violence</option>
+                          <option>Family</option>
+                          <option>Youth</option>
+                       </select>
+                        <script>
+                          let output = document.getElementById('output');
+                          function selectShelter() {
+                             let dropdown = document.getElementById('dropdown');
+                             // get the index of the selected option
+                             let selectedIndex = dropdown.selectedIndex;
+                          }
+                       </script>
+                    </div>
+
                     <div id="zipCodeInput">
                         <input id="userZipInput" class="zipCode" type="text" placeholder="Zip Code">
                     </div>
 
                     <div id="searchButton">
-                        <button type="button" id="search" onclick="searchShelters()">Find Shelters</button>
+                        <button type="button" id="search" onclick="initMap()">Find Shelters</button>
                     </div>
                     <script>
                         /*function searchShelters() {
@@ -58,14 +72,19 @@
 
             <!-- Google Maps API -->
             <!-- Code from Google Maps API -->
-              <div id="map" style = "height: 400px; width: 100%;"></div>
-        </div>
-        <script src = "shelter.js"></script>
-                <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&libraries=places&callback=initMap" defer></script>
-
-        <script>
-            initMap();
-        </script>
+            <div id="map"></div>
+            <div id="sidebar">
+                <h2>Results</h2>
+                <ul id="places"></ul>
+                <button id="more">Load more results</button>
+            </div>
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
+            defer
+          ></script>
+                <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                    ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
+                
             <!-- End of Google Maps API -->
 
         </div>
@@ -104,7 +123,7 @@
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
-                      <div id="jrElement">
+                    <div id="jrElement">
                         <div id="jrImage"></div>
                         <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
@@ -212,27 +231,6 @@
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div> 
-                        <div id="jrElement">
-                        <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
-                        <p id="jrDescription">Address</p>
-                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
-                        <btn id="moreInfoBtn">More Info &#8594;</btn>
-                    </div>
-                    <div id="jrElement">
-                        <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
-                        <p id="jrDescription">Address</p>
-                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
-                        <btn id="moreInfoBtn">More Info &#8594;</btn>
-                    </div>
-                    <div id="jrElement">
-                        <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
-                        <p id="jrDescription">Address</p>
-                        <btn id="bookmarkBtn">&#9734 Bookmark</btn>
-                        <btn id="moreInfoBtn">More Info &#8594;</btn>
-                    </div>
                 </div>
             </div>
         </div> 
