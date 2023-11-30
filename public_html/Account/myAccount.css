@@ -176,7 +176,7 @@ img.logoImage {
 .tab:hover {
     background-color: #ddd;
 }
-.tab.active {
+.tabs .tab.active {
   background-color: #04724D;
   color: #ffffff;
 }
