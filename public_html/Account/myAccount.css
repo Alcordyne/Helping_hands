@@ -163,12 +163,20 @@ img.logoImage {
   grid-template-columns: repeat(2, 1fr);  
   background-color: #F2F4F8;
 }
+
 .tab {
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
   font-weight: 600;
   color: #697077;
+}
+.tab:hover {
+    background-color: #ddd;
+}
+.tab.active {
+  background-color: #04724D;
+  color: #ffffff;
 }
 .tab-content {
   background-color: #ffffff;
@@ -195,7 +203,4 @@ padding: 20px;
 .active {
   display: block;
 }
-.tab .active {
-  background-color: #04724D;
-  color: #ffffff;
-}
+
