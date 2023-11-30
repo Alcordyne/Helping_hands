@@ -30,18 +30,18 @@ function toggleBookmark(ID) {
 }
 
 // Retrieve bookmark status from storage
-function getBookmarkStatus(resourceId) {
+function getBookmarkStatus(ID) {
     const bookmarks = getBookmarks();
     return bookmarks.includes(resourceId);
 }
 
-function setBookmarkStatus(resourceId, status) {
+function setBookmarkStatus(ID, status) {
     let bookmarks = getBookmarks();
 
     if (status) {
         bookmarks.push(ID);
     } else {
-        bookmarks = bookmarks.filter(id => id !== resourceId);
+        bookmarks = bookmarks.filter(id => id !== ID);
     }
     saveBookmarks(bookmarks);
 }
