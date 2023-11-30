@@ -88,18 +88,18 @@
                   };
             
                   onAuthStateChanged(auth, (user) => {
-                    if (user) {
-                      signOutButton.style.display = "block";
-                      signInButton.style.display = "none";
-                      message.style.display = "block";
-                      userName.innerHTML = user.displayName;
-                      userEmail.innerHTML = user.email;
-                    } else {
-                      signOutButton.style.display = "none";
-                      signInButton.style.display = "block";
-                      message.style.display = "none";
-                    }
-                  });
+                      if (user) {
+                        signOutButton.style.display = "inline-block";
+                        signInButton.style.display = "none";
+                        message.style.display = "inline-block";
+                        userName.innerHTML = user.displayName;
+                        userEmail.innerHTML = user.email;
+                      } else {
+                        signOutButton.style.display = "none";
+                        signInButton.style.display = "inline-block";
+                        message.style.display = "none";
+                      }
+                    });
             
                   signInButton.addEventListener("click", userSignIn);
                   signOutButton.addEventListener("click", userSignOut);
