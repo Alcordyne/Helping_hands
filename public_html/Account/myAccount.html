@@ -29,23 +29,27 @@
     </nav>
 
     <!-- Main Content -->
-  <div class="tabs">
-  <div class="tab-2">
-    <label for="tab2-1">One</label>
-    <input id="tab2-1" name="tabs-two" type="radio" checked="checked">
-    <div>
-      <h4>Tab One</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consequat id velit quis vestibulum. Nam id orci eu urna mollis porttitor. Nunc nisi ante, gravida at velit eu, aliquet sodales dui. Sed laoreet condimentum nisi a egestas. <a class="documentation" href="https://flkt.mx/pitaya/componentes.html#pestanias">Documentación en español</a>.</p><p>Donec interdum ante ut enim consequat, quis varius nulla dapibus. Vivamus mollis fermentum augue a varius. Vestibulum in sapien at lectus gravida lobortis vulputate sed metus. Duis scelerisque justo et maximus efficitur. Donec eu eleifend quam. Curabitur aliquet commodo sapien eget vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Vestibulum vel aliquet nunc, finibus posuere lorem. Suspendisse consectetur volutpat est ut ornare.</p>
+ <div class="wrapper">
+    <ul class="tabs">
+        <li><a href="javascript:void(0); return false;" rel="#tabcontent1" class="tab active">TAB 1</a></li>
+        <li><a href="javascript:void(0); return false;" rel="#tabcontent2" class="tab">TAB 2</a></li>
+        <li><a href="javascript:void(0); return false;" rel="#tabcontent3" class="tab">TAB 3</a></li>
+    </ul>
+    
+    <div class="tab_content_container">
+        <div class="tab_content tab_content_active" id="tabcontent1">
+            <h3>What Is Loren Ipsum ?</h3>
+            <span><img src="http://lorempixel.com/output/sports-h-c-100-200-5.jpg" /></span>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+        
+        <div class="tab_content" id="tabcontent2">
+            <h3>Why do we use ?</h3>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+            
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+        </div>
     </div>
-  </div>
-  <div class="tab-2">
-    <label for="tab2-2">Two</label>
-    <input id="tab2-2" name="tabs-two" type="radio">
-    <div>
-      <h4>Tab Two</h4>
-      <p>Quisque sit amet turpis leo. Maecenas sed dolor mi. Pellentesque varius elit in neque ornare commodo ac non tellus. Mauris id iaculis quam. Donec eu felis quam. Morbi tristique lorem eget iaculis consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aenean at tellus eget risus tempus ultrices. Nam condimentum nisi enim, scelerisque faucibus lectus sodales at.</p>
-    </div>
-  </div>
 </div>
     <!-- Script for tab switching -->
     <script src="myAccount.js"></script>
