@@ -1,17 +1,39 @@
-document.addEventListener("DOMContentLoaded", function () {
-    // Get all the elements
-    var toggleBtns = document.querySelectorAll(".toggle-btn");
+class FAQItem {
+    constructor(element) {
+      this.element = element;
+    }
 
-    // Add click event listeners to each toggle button
-    toggleBtns.forEach(function (btn) {
-        btn.addEventListener("click", function () {
-            // parent element
-            var faqItem = this.closest(".faq-item");
-            faqItem.classList.toggle("active");
+    toggle() {
+      this.element.classList.toggle("active");
+    }
+  }
 
-            // display the answer by toggling the .show class
-            var answer = faqItem.querySelector(".answer");
-            answer.classList.toggle("show");
-        });
+  // Decorator class to add answer toggling functionality
+  class AnswerToggleDecorator extends FAQItem {
+    constructor(element) {
+      super(element);
+    }
+
+    toggleAnswer() {
+      const answer = this.element.querySelector('.answer');
+      answer.classList.toggle('hidden');
+    }
+  }
+
+  // Initialize FAQ items
+  document.addEventListener("DOMContentLoaded", function () {
+    var faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(function (item) {
+      const faqItem = new FAQItem(item);
+
+      // Add AnswerToggleDecorator to each FAQ item
+      const decoratedFAQItem = new AnswerToggleDecorator(item);
+
+      // Add click event listener to each toggle button
+      item.querySelector(".toggle-btn").addEventListener("click", function () {
+        faqItem.toggle();
+        decoratedFAQItem.toggleAnswer();
+      });
     });
-});
+  });
