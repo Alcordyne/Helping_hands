@@ -349,6 +349,10 @@ body {
     text-align: center;
     color: #04724d;
 }
+.moreInfoBtn:hover {
+  text-decoration: underline;
+  text-decoration-color: #005236;
+}
 /*----------Guides Section Ends---------------*/
 
 
