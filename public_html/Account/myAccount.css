@@ -154,11 +154,6 @@ img.logoImage {
   display: flex;
   flex-wrap: wrap;
   width: 90%;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-top: -50px;
-  margin-left: -100px;
   font-family: sans-serif;
 }
 
