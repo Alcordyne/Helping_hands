@@ -196,18 +196,3 @@ h3 {
   background-color: #ffffff;
   color: #4d5bf9;
 }
-/*----------------Footer----------------*/
-
-/*changes background of footer*/
-footer {
-    background-color: #666; 
-    color: #fff; 
-    padding: 20px 0; 
-    text-align: center;
-}
-
-/*centers footer*/
-.footer-content {
-    max-width: 500px; 
-    margin: 0 auto; 
-}
