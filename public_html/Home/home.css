@@ -4,8 +4,6 @@ body{
     padding:0;
     background: white;
     font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-direction: column;
 }
 
 /*----------------MISSION STATEMENT SECTION----------------*/
