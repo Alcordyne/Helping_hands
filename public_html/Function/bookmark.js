@@ -10,7 +10,7 @@ function updateBookmarkButton() {
     const resourceElements = document.querySelectorAll('.jrElement');
 
     resourceElements.forEach(element => {
-        const resourceId = element.getAttribute('data-id');
+        const resourceId = element.getAttribute('job-id');
         const bookmarkBtn = element.querySelector('.bookmarkBtn');
         const isBookmarked = getBookmarkStatus(resourceId);
 
@@ -32,7 +32,7 @@ function toggleBookmark(ID) {
 // Retrieve bookmark status from storage
 function getBookmarkStatus(ID) {
     const bookmarks = getBookmarks();
-    return bookmarks.includes(resourceId);
+    return bookmarks.includes(ID);
 }
 
 function setBookmarkStatus(ID, status) {
