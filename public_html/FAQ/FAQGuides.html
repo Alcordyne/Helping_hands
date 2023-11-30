@@ -63,6 +63,10 @@
                   const message = document.getElementById("message");
                   const userName = document.getElementById("userName");
                   const userEmail = document.getElementById("userEmail");
+                  const bookmarkBtn1 = document.getElementById("bookmarkBtn1")
+                  const bookmarkBtn2 = document.getElementById("bookmarkBtn2")
+                  const bookmarkBtn3 = document.getElementById("bookmarkBtn3")
+                  const bookmarkBtn4 = document.getElementById("bookmarkBtn4")
             
                   signOutButton.style.display = "none";
                   message.style.display = "none";
@@ -92,11 +96,19 @@
                         signOutButton.style.display = "inline-block";
                         signInButton.style.display = "none";
                         message.style.display = "inline-block";
+                        bookmarkBtn1.style.display = "inline-block";
+                        bookmarkBtn2.style.display = "inline-block";
+                        bookmarkBtn3.style.display = "inline-block";
+                        bookmarkBtn4.style.display = "inline-block";
                         userName.innerHTML = user.displayName;
                         userEmail.innerHTML = user.email;
                       } else {
                         signOutButton.style.display = "none";
                         signInButton.style.display = "inline-block";
+                        bookmarkBtn1.style.display = "none";
+                        bookmarkBtn2.style.display = "none";
+                        bookmarkBtn3.style.display = "none";
+                        bookmarkBtn4.style.display = "none";
                         message.style.display = "none";
                       }
                     });
@@ -173,7 +185,7 @@
                         <div class="box-content">
                             <h3>Student Homelessness Certification Form</h3>
                             <p>The Student Homelessness Certification is used by multiple providers to affirm that a homeless youths who are under 25 years of age.</p>
-                            <a class="bookmarkBtn">&#9734 Bookmark</a>
+                            <a class="bookmarkBtn" id="bookmarkBtn1">&#9734 Bookmark</a>
                             <a class="moreInfoBtn" href="HomelessForm.html">More Info &#8594;</a>
                         </div>
                     </div>
@@ -182,7 +194,7 @@
                         <div class="box-content">
                             <h3>Disability Certification Form (SSF)</h3>
                             <p>The Disability Certification is used to affirm that an individual is disabled and is used only for the purpose of qualifying for housing assistance under a program of U.S. Department of Housing and Urban Development (HUD).</p>
-                            <a class="bookmarkBtn">&#9734 Bookmark</a>
+                            <a class="bookmarkBtn" id="bookmarkBtn2">&#9734 Bookmark</a>
                             <a class="moreInfoBtn" href="DisForm.html">More Info &#8594;</a>
                 </div>
                      </div>
@@ -191,7 +203,7 @@
                         <div class="box-content">
                             <h3>Birth Certificate for Homelessness</h3>
                             <p>Based on the Section <a href="https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=HSC&sectionNum=103577.">103577</a> of the Health and Safety Code, a fee-exempt copy of a birth record may be issued to an eligible homeless person, or homeless child or youth.</p>
-                            <a class="bookmarkBtn">&#9734 Bookmark</a>
+                            <a class="bookmarkBtn" id="bookmarkBtn3">&#9734 Bookmark</a>
                             <a class="moreInfoBtn" href="BirthForm.html">More Info &#8594;</a>
                  </div>
                      </div>
@@ -200,7 +212,7 @@
                         <div class="box-content">
                             <h3>P.O. Box Form (Form 1093)</h3>
                             <p>Individual needs to fill out the Form 1093 in order to apply for a P.O. Box at any USPS Post Office</p>
-                            <a class="bookmarkBtn">&#9734 Bookmark</a>
+                            <a class="bookmarkBtn" id="bookmarkBtn4">&#9734 Bookmark</a>
                             <a class="moreInfoBtn" href="POForm.html">More Info &#8594;</a>
                         </div>
         
