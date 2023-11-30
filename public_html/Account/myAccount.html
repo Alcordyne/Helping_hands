@@ -29,21 +29,16 @@
     </nav>
 
     <!-- Main Content -->
-<div class="container">
-  <input type="radio" id="tab1" name="tab" checked>
-  <label for="tab1"><i class="fa fa-code"></i> Features</label>
-  <input type="radio" id="tab2" name="tab">
-  <label for="tab2"><i class="fa fa-history"></i> History</label>
-  <div class="line"></div>
-  <div class="content-container">
-    <div class="content" id="c1">
-      <h3>Features</h3>
-      <p>There really are a lot of features.</p>
-    </div>
-    <div class="content" id="c2">
-      <h3>History</h3>
-      <p>The project started in 2018 when someone needed something.</p>
-    </div>
+<div class="tabs">
+  <input type="radio" class="tabs__radio" name="tabs-example" id="tab1" checked>
+  <label for="tab1" class="tabs__label">Tab #1</label>
+  <div class="tabs__content">
+    CONTENT for Tab #1
+  </div>
+  <input type="radio" class="tabs__radio" name="tabs-example" id="tab2">
+  <label for="tab2" class="tabs__label">Tab #2</label>
+  <div class="tabs__content">
+    CONTENT for Tab #2
   </div>
 </div>
     <!-- Script for tab switching -->
