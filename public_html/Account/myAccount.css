@@ -224,9 +224,6 @@ input {
     margin-top: 0;
     margin-bottom: 15px;
 }
-input:hover {
-     background-color: #ddd;
-}
 .resource-section {
   border: 1px solid #ddd;
   padding: 10px;
