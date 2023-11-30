@@ -63,6 +63,12 @@ input#userZipInput {
     height: 50px;
 }
 
+#resultsTitle{
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
 #map {
 /*    background-color: green;*/
     grid-area: Map;
@@ -155,11 +161,20 @@ li {
     text-align: center;
 }
 
-li p {
+li h3 {
     padding: 5px;
     height: 10%;
     text-align: center;
-    font-weight: 600;
+    font-weight: 500;
+    margin: auto;
+    margin-top: 5px;
+}
+
+li p {
+    padding: 5px;
+    height: 10%;
+    text-align: left;
+    font-weight: none;
     margin: auto;
     margin-top: 5px;
 }
@@ -167,8 +182,9 @@ li p {
 li a {
     padding: 5px;
     height: 10%;
-    text-align: center;
-    font-weight: 600;
+    text-align: left;
+    font-weight: none;
     margin: auto;
     margin-top: 5px;
+    color:#04724D;
 }
