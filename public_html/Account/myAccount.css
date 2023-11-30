@@ -159,7 +159,7 @@ img.logoImage {
   background-color: #ffffff;
 }
 .tabs {
-  display: flex;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);  
   background-color: #F2F4F8;
 }
