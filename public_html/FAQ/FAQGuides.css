@@ -115,7 +115,7 @@ img.logoImage {
     transition: background-color 0.3s, color 0.3s;
 }
 #SignUp:hover {
-    background-color: white;
+    background-color: #005236;
 }
 #SignUp > a {
     line-height: 40px;
@@ -124,10 +124,6 @@ img.logoImage {
     text-align: center;
     text-decoration: none;
     color: white;
-    transition: color 0.3s;
-}
-#SignUp:hover > a {
-    color: #04724D;
 }
 #LogIn {
     display: inline-block;
