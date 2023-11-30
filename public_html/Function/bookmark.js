@@ -11,9 +11,9 @@ function updateBookmarkButton() {
     const isBookmarked = getBookmarkStatus();
 
     if (isBookmarked) {
-        bookmarkBtn.innerHTML = '★ Bookmarked';
+        bookmarkBtn.innerHTML = '⭐ Bookmarked';
     } else {
-        bookmarkBtn.innerHTML = '⭐ Bookmark';;
+        bookmarkBtn.innerHTML = '★ Bookmark';;
     }
 }
 
