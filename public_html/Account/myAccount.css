@@ -219,6 +219,12 @@ input {
     margin-top: 0;
     margin-bottom: 15px;
 }
+.tab-content p {
+  text-align: justify;
+  line-height: 1.9;
+  letter-spacing: 0.4px;
+  color: #202238;
+}
 .tab-content div {
   display: none;
 }
