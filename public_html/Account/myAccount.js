@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   let tabs = document.querySelectorAll(".tabs h3");
-  let tabContents = document.querySelectorAll(".tab-content div");
+  let tabContents = document.querySelectorAll(".tab-content .tab-pane");
 
   tabs.forEach((tab, index) => {
     tab.addEventListener("click", () => {
