@@ -116,6 +116,10 @@ img.logoImage {
     text-decoration: none;
     color: #04724D;
 }
+#MyAccount:hover {
+    background-color: #04724D;
+    color: #ffffff;
+}
 
 #Search {
     margin-top: auto;
