@@ -45,16 +45,203 @@
                     <button type="button" id="search" onclick="searchFoodBanks()">Find Food Banks</button>
                 </div>
                 <script>
-                    function searchFoodBanks() {
-                      document.getElementById("fourSearches").style.display = "block";
-                      document.getElementById("moreButton").style.display = "block";
-                    }
-                </script>
+                function searchFoodBanks() {
+        var zipCodeElement = document.getElementById("zipCodeInput");
+
+        // Check if the element is found
+        if (zipCodeElement) {
+            // Find the input element inside the div
+            var inputElement = zipCodeElement.querySelector('input');
+
+            if (inputElement && inputElement.value !== undefined) {
+                var zipCode = inputElement.value.trim();
+
+                if (zipCode !== "") {
+                    var geocoder = new google.maps.Geocoder();
+                    geocoder.geocode({ 'address': zipCode }, function (results, status) {
+                        if (status === 'OK' && results[0]) {
+                            var location = results[0].geometry.location;
+
+                            map.setCenter(location);
+                            // Remove the alert message, and the map will focus directly
+                        } else {
+                            console.error('Geocode was not successful for the following reason: ' + status);
+                        }
+                    });
+                } else {
+                    console.error('Please enter a valid zip code.');
+                }
+            } else {
+                console.error('Zip code input element not found.');
+            }
+        } else {
+            console.error('Container div element not found.');
+        }
+
+        var riverCity = {
+    info:
+      '<strong>River City Food Bank at St. Matthews</strong><br>\
+    	2300 Edison Ave<br> Sacramento, CA 95821<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.62347,
+    long: -121.40987,
+  }
+
+  var temple = {
+    info:
+    '<strong>Temple of Prayer - Food Distribution Center</strong><br>\
+    	3909 8th Ave<br> Sacramento, CA 95817<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.54547,
+    long: -121.46448,
+  }
+
+  var foodFamily = {
+    info:
+    '<strong>Sacramento Food Bank & Family Services</strong><br>\
+    	1951 Bell Ave<br> Sacramento, CA 95838<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.64884,
+    long: -121.42052,
+  }
+
+  var promiseLand = {
+    info:
+    '<strong>Promise Land Ministries - Food Distribution Center</strong><br>\
+    	5540 Martin Luther King Jr Blvd<br> Sacramento, CA 95820<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.52640,
+    long: -121.46515,
+  }
+
+  var corner = {
+    info:
+    '<strong>Cornerstone Community Church Food Pantry</strong><br>\
+    	1914 Apartment Ln<br> Sacramento, CA 95825<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.60128,
+    long: -121.40411,
+  }
+
+  var samoa = {
+    info:
+    '<strong>Sacramento Samoa New Covenant Church - Food Distribution Center</strong><br>\
+    	8460 Belvedere Ave<br> Sacramento, CA 95826<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.53879,
+    long: -121.39281,
+  }
+
+  var heart = {
+    info:
+    '<strong>A Heart For The Hungry - Food Distribution Center</strong><br>\
+    	1515 Sports Dr #600<br> Sacramento, CA 95834<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.64949,
+    long: -121.49734,
+  }
+
+  var memorial = {
+    info:
+    '<strong>Williams Memmorial Church of God in Christ - Food Distribution Center</strong><br>\
+    	3395 Martin Luther King Jr Blvd<br> Sacramento, CA 95817<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.54433,
+    long: -121.46369,
+  }
+
+  var produce = {
+    info:
+    '<strong>Sacramento Native American HEalth Center - Produce for All - Food Distribution Center</strong><br>\
+    	2020 J St<br> Sacramento, CA 95811<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.57692,
+    long: -121.47896,
+  }
+
+  var paul = {
+    info:
+    '<strong>St Vincent De Paul Food Bank</strong><br>\
+    	4129 Robertson Ave<br> Sacramento, CA 95821<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.62218,
+    long: -121.36737,
+  }
+
+  var locations = [
+    [riverCity.info, riverCity.lat, riverCity.long, 0]
+    [temple.info, temple.lat, temple.long, 1]
+    [foodFamily.info, foodFamily.lat, foodFamily.long, 2]
+    [promiseLand.info, promiseLand.lat, promiseLand.long, 3]
+    [corner.info, corner.lat, corner.long, 4]
+    [samoa.info, samoa.lat, samoa.long, 5]
+    [heart.info, heart.lat, heart.long, 6]
+    [memorial.info, memorial.lat, memorial.long, 7]
+    [produce.info, produce.lat, produce.long, 8]
+    [paul.info, paul.lat, paul.long, 9]
+]
+
+var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: new google.maps.LatLng(41.976816, -87.659916),
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+  })
+
+  var infowindow = new google.maps.InfoWindow({})
+
+  var marker, i
+
+  for (i = 0; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map,
+    })
+
+    google.maps.event.addListener(
+      marker,
+      'click',
+      (function (marker, i) {
+        return function () {
+          infowindow.setContent(locations[i][0])
+          infowindow.open(map, marker)
+        }
+      })(marker, i)
+    )
+  }
+}
+        </script>
             </div>
             
-            <div class="Map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.881588688774!2d-121.42364269999996!3d38.55954189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada8d38835d9f%3A0x3fdb73cc57495670!2sCalifornia%20State%20University%2C%20Sacramento%20-%20University%20Library!5e0!3m2!1sen!2sus!4v1700614875544!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width ="600" height ="450" style="border:0;" allowfullscreen="" loading-"lazy"></iframe>
-            </div>
+            <div id="map">
+                <div id="sidebar">
+                    <h2>Results</h2>
+                    <ul id="places"></ul>
+                    <button id="more">Load more results</button>
+                </div>
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
+                async defer>
+            </script>
+                    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                        ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
+            
+            <script>
+                function initMap(){
+                    const sacra = new google.maps.LatLng(38.582, -121.494);
+    
+      infowindow = new google.maps.InfoWindow();
+      map = new google.maps.Map(document.getElementById("map"), {
+        center: sacra,
+        zoom: 15,
+      });
+    
+      const request = {
+        query: "food banks",
+        fields: ["name", "formatted_address", "geometry"],
+      };
+    }
+    
+            </script>
                 
         </div>
         <!-- End of Food Banks Section w/ Title and Map ONLY -->
