@@ -1,157 +1,190 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Helping Hands</title>
-        <link rel="stylesheet" href="home.css">
-        <link rel="stylesheet" href="/public_html/Auth/auth.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
-        
-    </head>
-    
-    <body>
-        <!--Navigation Bar-->
-        <nav>
-            <div id="Logo"><a href="home.html"><img class="logoImage" src="../Image/Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></div>
-            <div id="NavBar">
-                <div id="Shelters"><a href="../Shelter/shelters.html" class="navLinks">Shelters</a></div>
-                <div id="Food"><a href="../Foodbank/foodBanks.html" class="navLinks">Food Banks</a></div>
-                <div id="Job"><a href="../Job/jobAssistance.html" class="navLinks">Job Assistance</a></div>
-                <div id="Health"><a href="../Healthcare/healthcare.html" class="navLinks">Healthcare</a></div>
-                <div id="FAQ"><a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
-            </div>
-            <div id="SearchAcc">
-                <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
-                <div id="Search"><button onclick="performSearch()">Search</button></div>
-                <ul id="results"></ul>
-                <button class="login-with-google-btn" id="signInButton">
-                    Sign in with Google
-                  </button>
-                  <button class="login-with-google-btn" id="signOutButton">Sign Out</button>
-                  <div id="message">
-                    <p>Welcome, <span id="userName"></span></p>
-                  </div>
-              
-                  <script type="module">
-                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-              
-                    import {
-                      getAuth,
-                      GoogleAuthProvider,
-                      signInWithPopup,
-                      signOut,
-                      onAuthStateChanged,
-                    } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-              
-                    const firebaseConfig = {
-                      apiKey: "AIzaSyCMoJgx0q7dHhP4JXyCGGrUM30C0XIjHOU",
-                      authDomain: "helping-hands-294dd.firebaseapp.com",
-                      projectId: "helping-hands-294dd",
-                      storageBucket: "helping-hands-294dd.appspot.com",
-                      messagingSenderId: "1011622576310",
-                      appId: "1:1011622576310:web:f71308aeaa2f59c7eca617",
-                      measurementId: "G-HVKZL5HEHW",
-                    };
-              
-                    const app = initializeApp(firebaseConfig);
-                    const auth = getAuth();
-                    const provider = new GoogleAuthProvider();
-              
-                    const signInButton = document.getElementById("signInButton");
-                    const signOutButton = document.getElementById("signOutButton");
-                    const message = document.getElementById("message");
-                    const userName = document.getElementById("userName");
-                    const userEmail = document.getElementById("userEmail");
-              
-                    signOutButton.style.display = "none";
-                    message.style.display = "none";
-              
-                    const userSignIn = async () => {
-                      signInWithPopup(auth, provider)
-                        .then((result) => {
-                          const user = result.user;
-                          console.log(user);
-                        })
-                        .catch((error) => {
-                          const errorCode = error.code;
-                          const errorMessage = error.message;
-                        });
-                    };
-              
-                    const userSignOut = async () => {
-                      signOut(auth)
-                        .then(() => {
-                          alert("You have signed out.");
-                        })
-                        .catch((error) => {});
-                    };
-              
-                    onAuthStateChanged(auth, (user) => {
-                      if (user) {
-                        signOutButton.style.display = "inline-block";
-                        signInButton.style.display = "none";
-                        message.style.display = "inline-block";
-                        userName.innerHTML = user.displayName;
-                        userEmail.innerHTML = user.email;
-                      } else {
-                        signOutButton.style.display = "none";
-                        signInButton.style.display = "inline-block";
-                        message.style.display = "none";
-                      }
-                    });
-              
-                    signInButton.addEventListener("click", userSignIn);
-                    signOutButton.addEventListener("click", userSignOut);
-                  </script>
-            </div>
+  <head>
+    <title>Helping Hands</title>
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="/public_html/Auth/auth.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+  </head>
 
-            <script src="../Function/search.js"></script>
-        </nav>
-        <!--END of Navigation Bar-->
-        
-        <!--Mission Statement Section-->
-        <div class="mission">
-            <div class="missionStatement">
-                <h1>Our Mission</h1>
-                
-                <ul>
-                    <li>Our steady commitment is to serve the Sacramento area with a compassionate and steady helping hand in times of adversity.</li>
-                    <li>We take pride in being a reliable source of support, ensuring that our community can always rely on us when they need assistance during difficult times.</li>
-                </ul>
-            </div>
+  <body>
+    <!--Navigation Bar-->
+    <nav>
+      <div id="Logo">
+        <a href="home.html"
+          ><img
+            class="logoImage"
+            src="../Image/Helping Hands New Logo 3.png"
+            alt="Hands holding up a house"
+        /></a>
+      </div>
+      <div id="NavBar">
+        <div id="Shelters">
+          <a href="../Shelter/shelters.html" class="navLinks">Shelters</a>
+        </div>
+        <div id="Food">
+          <a href="../Foodbank/foodBanks.html" class="navLinks">Food Banks</a>
+        </div>
+        <div id="Job">
+          <a href="../Job/jobAssistance.html" class="navLinks"
+            >Job Assistance</a
+          >
+        </div>
+        <div id="Health">
+          <a href="../Healthcare/healthcare.html" class="navLinks"
+            >Healthcare</a
+          >
+        </div>
+        <div id="FAQ">
+          <a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a>
+        </div>
+      </div>
+      <div id="SearchAcc">
+        <div id="SearchInput">
+          <input type="text" id="searchInput" placeholder="Search for..." />
+        </div>
+        <div id="Search"><button onclick="performSearch()">Search</button></div>
+        <ul id="results"></ul>
+        <button class="login-with-google-btn" id="signInButton">
+          Sign in with Google
+        </button>
+        <button class="login-with-google-btn" id="signOutButton">
+          Sign Out
+        </button>
+        <div id="message">
+          <p>Welcome, <span id="userName"></span></p>
+        </div>
 
-            <img src="../Image/MissionPhotoofHands.jpg" alt="A group of people in a circle placing their hands together in the middle.">
-        </div>
-        <!--END of Mission Statement Section-->
-        
-        <div class="resourceHeader">
-            <h1>We offer many resources when it comes to your needs</h1>
-        </div>
-            <div id="briefResources">
-                <div id="House">
-                    <a><img src="../Image/home-sharp.png" alt="House"></a>
-                    <p>Choose the best shelter that suits your needs.</p>
-                </div>
-                <div id="ForkKnife">
-                    <a><img src="../Image/restaurant-sharp.png" alt="Fork and knife"></a>
-                    <p>Local food banks and hot meal options.</p>
-                </div>
-                <div id="Briefcase">
-                    <a><img src="../Image/briefcase-sharp.png" alt="Briefcase"></a>
-                    <p>Resume support and the best practices to get a job.</p>
-                </div>
-                <div id="Heart">
-                    <a><img src="../Image/fitness-sharp.png" alt="Heart"></a>
-                    <p>Healthcare clinics that provide no-cost help.</p>
-                </div>
-        </div>
-        <!--Footer-->
-        <footer>
-            <div class="footer-content">
-            <p>Helping Hands @ 2023. All rights reserved.</p>
-        </div>
-        </footer>
-        <!--END of Footer-->
-    </body>
-    
+        <script type="module">
+          import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+
+          import {
+            getAuth,
+            GoogleAuthProvider,
+            signInWithPopup,
+            signOut,
+            onAuthStateChanged,
+          } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
+
+          const firebaseConfig = {
+            apiKey: "AIzaSyCMoJgx0q7dHhP4JXyCGGrUM30C0XIjHOU",
+            authDomain: "helping-hands-294dd.firebaseapp.com",
+            projectId: "helping-hands-294dd",
+            storageBucket: "helping-hands-294dd.appspot.com",
+            messagingSenderId: "1011622576310",
+            appId: "1:1011622576310:web:f71308aeaa2f59c7eca617",
+            measurementId: "G-HVKZL5HEHW",
+          };
+
+          const app = initializeApp(firebaseConfig);
+          const auth = getAuth();
+          const provider = new GoogleAuthProvider();
+
+          const signInButton = document.getElementById("signInButton");
+          const signOutButton = document.getElementById("signOutButton");
+          const message = document.getElementById("message");
+          const userName = document.getElementById("userName");
+          const userEmail = document.getElementById("userEmail");
+
+          signOutButton.style.display = "none";
+          message.style.display = "none";
+
+          const userSignIn = async () => {
+            signInWithPopup(auth, provider)
+              .then((result) => {
+                const user = result.user;
+                console.log(user);
+              })
+              .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+              });
+          };
+
+          const userSignOut = async () => {
+            signOut(auth)
+              .then(() => {
+                alert("You have signed out.");
+              })
+              .catch((error) => {});
+          };
+
+          onAuthStateChanged(auth, (user) => {
+            if (user) {
+              signOutButton.style.display = "inline-block";
+              signInButton.style.display = "none";
+              message.style.display = "inline-block";
+              userName.innerHTML = user.displayName;
+              userEmail.innerHTML = user.email;
+            } else {
+              signOutButton.style.display = "none";
+              signInButton.style.display = "inline-block";
+              message.style.display = "none";
+            }
+          });
+
+          signInButton.addEventListener("click", userSignIn);
+          signOutButton.addEventListener("click", userSignOut);
+        </script>
+      </div>
+
+      <script src="../Function/search.js"></script>
+    </nav>
+    <!--END of Navigation Bar-->
+
+    <!--Mission Statement Section-->
+    <div class="mission">
+      <div class="missionStatement">
+        <h1>Our Mission</h1>
+
+        <ul>
+          <li>
+            Our steady commitment is to serve the Sacramento area with a
+            compassionate and steady helping hand in times of adversity.
+          </li>
+          <li>
+            We take pride in being a reliable source of support, ensuring that
+            our community can always rely on us when they need assistance during
+            difficult times.
+          </li>
+        </ul>
+      </div>
+
+      <img
+        src="../Image/MissionPhotoofHands.jpg"
+        alt="A group of people in a circle placing their hands together in the middle."
+      />
+    </div>
+    <!--END of Mission Statement Section-->
+
+    <div class="resourceHeader">
+      <h1>We offer many resources when it comes to your needs</h1>
+    </div>
+    <div id="briefResources">
+      <div id="House">
+        <a><img src="../Image/home-sharp.png" alt="House" /></a>
+        <p>Choose the best shelter that suits your needs.</p>
+      </div>
+      <div id="ForkKnife">
+        <a><img src="../Image/restaurant-sharp.png" alt="Fork and knife" /></a>
+        <p>Local food banks and hot meal options.</p>
+      </div>
+      <div id="Briefcase">
+        <a><img src="../Image/briefcase-sharp.png" alt="Briefcase" /></a>
+        <p>Resume support and the best practices to get a job.</p>
+      </div>
+      <div id="Heart">
+        <a><img src="../Image/fitness-sharp.png" alt="Heart" /></a>
+        <p>Healthcare clinics that provide no-cost help.</p>
+      </div>
+    </div>
+    <!--Footer-->
+    <footer>
+      <div class="footer-content">
+        <p>Helping Hands @ 2023. All rights reserved.</p>
+      </div>
+    </footer>
+    <!--END of Footer-->
+  </body>
 </html>
