@@ -47,9 +47,11 @@ h1 {
     grid-area: map;
     text-align: center;
     vertical-align: middle;
-    width: 700px;
-    height: 500px;
-    margin: 0 auto;
+}
+
+#Map > img {
+    width: 55%;
+    height: auto;
 }
 
 #dropDown {
@@ -150,5 +152,4 @@ button#moreResults:hover {
     margin-top: 20px;
     display: none;
 }
-
 
