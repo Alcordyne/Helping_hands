@@ -176,7 +176,7 @@ img.logoImage {
 .tab:hover {
     background-color: #ddd;
 }
-.tab.active, .tab.active:hover {
+.tab.active {
   background-color: #04724D;
   color: #ffffff;
 }
@@ -291,6 +291,6 @@ input {
 padding: 20px;
 }
 .active {
-  display: grid;
+  display: block;
 }
 
