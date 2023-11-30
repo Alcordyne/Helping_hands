@@ -170,6 +170,8 @@ img.logoImage {
   cursor: pointer;
   font-weight: 600;
   color: #555b61;
+  text-decoration: underline;
+  text-decoration-color: #ffffff;
 }
 .tab:hover {
     background-color: #ddd;
@@ -185,7 +187,7 @@ img.logoImage {
   display: none;
 }
 .user-info > h2 {
-  font-size: 27px;
+  font-size: 26px;
   margin-bottom: 20px;
   color: #000224;
   font-weight: 600;
