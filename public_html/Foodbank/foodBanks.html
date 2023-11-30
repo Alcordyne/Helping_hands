@@ -5,11 +5,11 @@
         <link rel="stylesheet" href="../Home/home.css">
         <link rel="stylesheet" href="../Job/jobAssistance.css">
         <link rel="stylesheet" href="foodBanks.css">
-        <link rel="stylesheet" href="/public_html/Auth/auth.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="viwport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
-        
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="../Foodbank/foodBanks.js"></script>
     </head>
     
     <body>
@@ -17,99 +17,18 @@
         <nav>
             <div id="Logo"><a href="../Home/home.html"><img class="logoImage" src="../Image/Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></div>
             <div id="NavBar">
-                <div id="Shelters"><a href="../Shelter/shelters.html" class="navLinks">Shelters</a></div>
+                <div id="Shelters"><a href="../Shelters/shelters.html" class="navLinks">Shelters</a></div>
                 <div id="Food"><a href="../Foodbank/foodBanks.html" class="navLinks">Food Banks</a></div>
                 <div id="Job"><a href="../Job/jobAssistance.html" class="navLinks">Job Assistance</a></div>
                 <div id="Health"><a href="../Healthcare/healthcare.html" class="navLinks">Healthcare</a></div>
                 <div id="FAQ"><a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
             </div>
             <div id="SearchAcc">
-                <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
-                <div id="Search"><button onclick="performSearch()">Search</button></div>
-                <ul id="results"></ul>
-                <button class="login-with-google-btn" id="signInButton">
-                    Sign in with Google
-                  </button>
-                  <button class="login-with-google-btn" id="signOutButton">Sign Out</button>
-              
-                  <div id="message">
-                    <p>Welcome, <span id="userName"></span></p>
-                  </div>
-              
-                  <script type="module">
-                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-              
-                    import {
-                      getAuth,
-                      GoogleAuthProvider,
-                      signInWithPopup,
-                      signOut,
-                      onAuthStateChanged,
-                    } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-              
-                    const firebaseConfig = {
-                      apiKey: "AIzaSyCMoJgx0q7dHhP4JXyCGGrUM30C0XIjHOU",
-                      authDomain: "helping-hands-294dd.firebaseapp.com",
-                      projectId: "helping-hands-294dd",
-                      storageBucket: "helping-hands-294dd.appspot.com",
-                      messagingSenderId: "1011622576310",
-                      appId: "1:1011622576310:web:f71308aeaa2f59c7eca617",
-                      measurementId: "G-HVKZL5HEHW",
-                    };
-              
-                    const app = initializeApp(firebaseConfig);
-                    const auth = getAuth();
-                    const provider = new GoogleAuthProvider();
-              
-                    const signInButton = document.getElementById("signInButton");
-                    const signOutButton = document.getElementById("signOutButton");
-                    const message = document.getElementById("message");
-                    const userName = document.getElementById("userName");
-                    const userEmail = document.getElementById("userEmail");
-              
-                    signOutButton.style.display = "none";
-                    message.style.display = "none";
-              
-                    const userSignIn = async () => {
-                      signInWithPopup(auth, provider)
-                        .then((result) => {
-                          const user = result.user;
-                          console.log(user);
-                        })
-                        .catch((error) => {
-                          const errorCode = error.code;
-                          const errorMessage = error.message;
-                        });
-                    };
-              
-                    const userSignOut = async () => {
-                      signOut(auth)
-                        .then(() => {
-                          alert("You have signed out.");
-                        })
-                        .catch((error) => {});
-                    };
-              
-                    onAuthStateChanged(auth, (user) => {
-                      if (user) {
-                        signOutButton.style.display = "inline-block";
-                        signInButton.style.display = "none";
-                        message.style.display = "inline-block";
-                        userName.innerHTML = user.displayName;
-                        userEmail.innerHTML = user.email;
-                      } else {
-                        signOutButton.style.display = "none";
-                        signInButton.style.display = "inline-block";
-                        message.style.display = "none";
-                      }
-                    });
-              
-                    signInButton.addEventListener("click", userSignIn);
-                    signOutButton.addEventListener("click", userSignOut);
-                  </script>
+                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="search()">Search</button></div>
+                <div id="LogIn"><a href="../Account/logIn.html">Log In</a></div>
+                <div id="SignUp"><a href="../Account/signUp.html">Sign Up</a></div>
             </div>
-
-            <script src="../Function/search.js"></script>
         </nav>
         <!--END of Navigation Bar-->
         
@@ -118,209 +37,32 @@
             <div id="Title"><h1>Food Banks</h1></div>
             <div id="DropZipSearch">
                 <div id="zipCodeInput">
-                    <input class="zipCode" type="text" placeholder="Zip Code">
+                    <input id="userZipInput" type="text" placeholder="Zip Code">
                 </div>
                 <div id="searchButton">
-                    <button type="button" id="search" onclick="searchFoodBanks()">Find Food Banks</button>
+                    <button type="button" id="searchFB" onclick="searchFoodBanks()">Find Food Banks</button>
                 </div>
                 <script>
-                function searchFoodBanks() {
-        var zipCodeElement = document.getElementById("zipCodeInput");
-
-        // Check if the element is found
-        if (zipCodeElement) {
-            // Find the input element inside the div
-            var inputElement = zipCodeElement.querySelector('input');
-
-            if (inputElement && inputElement.value !== undefined) {
-                var zipCode = inputElement.value.trim();
-
-                if (zipCode !== "") {
-                    var geocoder = new google.maps.Geocoder();
-                    geocoder.geocode({ 'address': zipCode }, function (results, status) {
-                        if (status === 'OK' && results[0]) {
-                            var location = results[0].geometry.location;
-
-                            map.setCenter(location);
-                            // Remove the alert message, and the map will focus directly
-                        } else {
-                            console.error('Geocode was not successful for the following reason: ' + status);
-                        }
-                    });
-                } else {
-                    console.error('Please enter a valid zip code.');
-                }
-            } else {
-                console.error('Zip code input element not found.');
-            }
-        } else {
-            console.error('Container div element not found.');
-        }
-
-        var riverCity = {
-    info:
-      '<strong>River City Food Bank at St. Matthews</strong><br>\
-    	2300 Edison Ave<br> Sacramento, CA 95821<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.62347,
-    long: -121.40987,
-  }
-
-  var temple = {
-    info:
-    '<strong>Temple of Prayer - Food Distribution Center</strong><br>\
-    	3909 8th Ave<br> Sacramento, CA 95817<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.54547,
-    long: -121.46448,
-  }
-
-  var foodFamily = {
-    info:
-    '<strong>Sacramento Food Bank & Family Services</strong><br>\
-    	1951 Bell Ave<br> Sacramento, CA 95838<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.64884,
-    long: -121.42052,
-  }
-
-  var promiseLand = {
-    info:
-    '<strong>Promise Land Ministries - Food Distribution Center</strong><br>\
-    	5540 Martin Luther King Jr Blvd<br> Sacramento, CA 95820<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.52640,
-    long: -121.46515,
-  }
-
-  var corner = {
-    info:
-    '<strong>Cornerstone Community Church Food Pantry</strong><br>\
-    	1914 Apartment Ln<br> Sacramento, CA 95825<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.60128,
-    long: -121.40411,
-  }
-
-  var samoa = {
-    info:
-    '<strong>Sacramento Samoa New Covenant Church - Food Distribution Center</strong><br>\
-    	8460 Belvedere Ave<br> Sacramento, CA 95826<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.53879,
-    long: -121.39281,
-  }
-
-  var heart = {
-    info:
-    '<strong>A Heart For The Hungry - Food Distribution Center</strong><br>\
-    	1515 Sports Dr #600<br> Sacramento, CA 95834<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.64949,
-    long: -121.49734,
-  }
-
-  var memorial = {
-    info:
-    '<strong>Williams Memmorial Church of God in Christ - Food Distribution Center</strong><br>\
-    	3395 Martin Luther King Jr Blvd<br> Sacramento, CA 95817<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.54433,
-    long: -121.46369,
-  }
-
-  var produce = {
-    info:
-    '<strong>Sacramento Native American HEalth Center - Produce for All - Food Distribution Center</strong><br>\
-    	2020 J St<br> Sacramento, CA 95811<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.57692,
-    long: -121.47896,
-  }
-
-  var paul = {
-    info:
-    '<strong>St Vincent De Paul Food Bank</strong><br>\
-    	4129 Robertson Ave<br> Sacramento, CA 95821<br>\
-    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
-    lat: 38.62218,
-    long: -121.36737,
-  }
-
-  var locations = [
-    [riverCity.info, riverCity.lat, riverCity.long, 0]
-    [temple.info, temple.lat, temple.long, 1]
-    [foodFamily.info, foodFamily.lat, foodFamily.long, 2]
-    [promiseLand.info, promiseLand.lat, promiseLand.long, 3]
-    [corner.info, corner.lat, corner.long, 4]
-    [samoa.info, samoa.lat, samoa.long, 5]
-    [heart.info, heart.lat, heart.long, 6]
-    [memorial.info, memorial.lat, memorial.long, 7]
-    [produce.info, produce.lat, produce.long, 8]
-    [paul.info, paul.lat, paul.long, 9]
-]
-
-var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 13,
-    center: new google.maps.LatLng(41.976816, -87.659916),
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-  })
-
-  var infowindow = new google.maps.InfoWindow({})
-
-  var marker, i
-
-  for (i = 0; i < locations.length; i++) {
-    marker = new google.maps.Marker({
-      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-      map: map,
-    })
-
-    google.maps.event.addListener(
-      marker,
-      'click',
-      (function (marker, i) {
-        return function () {
-          infowindow.setContent(locations[i][0])
-          infowindow.open(map, marker)
-        }
-      })(marker, i)
-    )
-  }
-}
-        </script>
+                    /*function searchFoodBanks() {
+                      document.getElementById("fourSearches").style.display = "block";
+                      document.getElementById("moreButton").style.display = "block";
+                    }*/
+                </script>
             </div>
             
-            <div id="map">
-                <div id="sidebar">
-                    <h2>Results</h2>
-                    <ul id="places"></ul>
-                    <button id="more">Load more results</button>
-                </div>
-                <script
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
-                async defer>
-            </script>
-                    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-                        ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
-            
-            <script>
-                function initMap(){
-                    const sacra = new google.maps.LatLng(38.582, -121.494);
-    
-      infowindow = new google.maps.InfoWindow();
-      map = new google.maps.Map(document.getElementById("map"), {
-        center: sacra,
-        zoom: 15,
-      });
-    
-      const request = {
-        query: "food banks",
-        fields: ["name", "formatted_address", "geometry"],
-      };
-    }
-    
-            </script>
+            <!-- Google Maps API -->
+            <!-- Code from Google Maps API -->
+            <div id="map"></div>
+            <div id="sidebar">
+                <h2>Results</h2>
+                <ul id="places"></ul>
+                <button id="more">Load more results</button>
+            </div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly" defer></script>
+                <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                    ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
+                
+            <!-- End of Google Maps API -->
                 
         </div>
         <!-- End of Food Banks Section w/ Title and Map ONLY -->
