@@ -107,7 +107,10 @@ img.logoImage {
     border: 2px solid #04724D;
     background-color: transparent;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
+#MyAccount:hover {
+    background-color: #04724D;
 
 #MyAccount > a {
     line-height: 40px;
@@ -115,14 +118,10 @@ img.logoImage {
     vertical-align: middle;
     text-decoration: none;
     color: #04724D;
+    transition: color 0.3s;
 }
-#MyAccount:hover {
-    background-color: #04724D;
-    border: 2px solid #ffffff;
-}
-#MyAccount > a:hover {
-    color: #ffffff;
-}
+#MyAccount:hover > a {
+    color: white;
 #Search {
     margin-top: auto;
     margin-bottom: auto;
