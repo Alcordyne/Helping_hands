@@ -163,7 +163,7 @@ img.logoImage {
   grid-template-columns: repeat(2, 1fr);  
   background-color: #F2F4F8;
 }
-h3 {
+.tab {
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
@@ -195,7 +195,7 @@ padding: 20px;
 .active {
   display: block;
 }
-.tabs .active {
+.tab .active {
   background-color: #04724D;
   color: #ffffff;
 }
