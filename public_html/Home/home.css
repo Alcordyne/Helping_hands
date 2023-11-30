@@ -288,6 +288,11 @@ img.logoImage {
     margin: 0 auto;
     width: 75%;
 }
+
+#bookmarkBtn.bookmarked {
+    color: gold; /* Change color to indicate bookmarked state */
+}
+
 /*----------------Footer----------------*/
 
 /*changes background of footer*/
