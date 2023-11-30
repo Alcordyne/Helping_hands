@@ -348,6 +348,7 @@ body {
     font-size:medium;
     text-align: center;
     color: #04724d;
+    text-decoration: none;
 }
 .moreInfoBtn:hover {
   text-decoration: underline;
