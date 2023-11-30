@@ -159,7 +159,7 @@ img.logoImage {
   background-color: #ffffff;
 }
 .tabs {
-  display: grid;
+  display: flex;
   grid-template-columns: repeat(2, 1fr);  
   background-color: #F2F4F8;
 }
@@ -285,12 +285,12 @@ input {
   text-decoration: underline;
   text-decoration-color: #04724d;
 }
-.tab-content div {
+.tab-content > div {
   display: grid;
   gap: 10px;
 padding: 20px;
 }
 .active {
-  display: block;
+  display: grid;
 }
 
