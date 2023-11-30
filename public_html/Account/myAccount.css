@@ -181,7 +181,7 @@ h4 {
   color: #000224;
   font-weight: 600;
 }
-.Section {
+#Section {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr;
