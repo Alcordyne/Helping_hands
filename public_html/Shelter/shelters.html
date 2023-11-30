@@ -35,7 +35,7 @@
         <div id="Top">
             <div id="Title"><h1>Shelters</h1></div>
             
-            <!-- <div id="DropZipSearch">
+            <!--<div id="DropZipSearch">
                     <div id="dropDown">
                         <select id = "dropdown" onchange = "selectShelter()">
                           <option>Shelters</option>
@@ -50,8 +50,8 @@
                              // get the index of the selected option
                              let selectedIndex = dropdown.selectedIndex;
                           }
-                       </script> -->
-                    </div>
+                       </script>
+                    </div>-->
 
                     <div id="zipCodeInput">
                         <input id="userZipInput" class="zipCode" type="text" placeholder="Zip Code">
@@ -61,72 +61,46 @@
                         <button type="button" id="search" onclick="initMap()">Find Shelters</button>
                     </div>
                     <script>
-                        function searchShelters() {
-                            var zipCodeElement = document.getElementById("zipCodeInput");
+                        /*function searchShelters() {
+                            // Display List
+                            document.getElementById("fourSearches").style.display = "block";
+                            document.getElementById("moreButton").style.display = "block";
+                            // End of Display List
+                        }  */
+                    </script>
+            </div>
 
-// Check if the element is found
-if (zipCodeElement) {
-    // Find the input element inside the div
-    var inputElement = zipCodeElement.querySelector('input');
+            <!-- Google Maps API -->
+            <!-- Code from Google Maps API -->
+             <div id="map">
+            <div id="sidebar">
+                <h2>Results</h2>
+                <ul id="places"></ul>
+                <button id="more">Load more results</button>
+            </div>
+            <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
+            async defer>
+        </script>
+                <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                    ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
+        
+        <script>
+            function initMap(){
+                const sacra = new google.maps.LatLng(38.582, -121.494);
 
-    if (inputElement && inputElement.value !== undefined) {
-        var zipCode = inputElement.value.trim();
+  infowindow = new google.maps.InfoWindow();
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: sacra,
+    zoom: 15,
+  });
 
-        if (zipCode !== "") {
-            var geocoder = new google.maps.Geocoder();
-            geocoder.geocode({ 'address': zipCode }, function (results, status) {
-                if (status === 'OK' && results[0]) {
-                    var location = results[0].geometry.location;
-
-                    map.setCenter(location);
-                    // Remove the alert message, and the map will focus directly
-                } else {
-                    console.error('Geocode was not successful for the following reason: ' + status);
-                }
-            });
-        } else {
-            console.error('Please enter a valid zip code.');
-        }
-    } else {
-        console.error('Zip code input element not found.');
-    }
-} else {
-    console.error('Container div element not found.');
+  const request = {
+    query: "homeless shelters",
+    fields: ["name", "formatted_address", "geometry"],
+  };
 }
-}
-</script>
-    </div>
-    
-    <div id="map">
-        <div id="sidebar">
-            <h2>Results</h2>
-            <ul id="places"></ul>
-            <button id="more">Load more results</button>
-        </div>
-        <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
-        async defer>
-    </script>
-            <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-                ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
-    
-    <script>
-        function initMap(){
-            const sacra = new google.maps.LatLng(38.582, -121.494);
-
-infowindow = new google.maps.InfoWindow();
-map = new google.maps.Map(document.getElementById("map"), {
-center: sacra,
-zoom: 15,
-});
-
-const request = {
-query: "food banks",
-fields: ["name", "formatted_address", "geometry"],
-};
-}
-
-    </script>
+        </script>
         
            </div>     
             <!-- End of Google Maps API -->
@@ -141,56 +115,56 @@ fields: ["name", "formatted_address", "geometry"],
                 <div id="jrList">
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Food Bank Name</p>
+                        <p id="jrElementTitle">Shelter Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
@@ -289,5 +263,3 @@ fields: ["name", "formatted_address", "geometry"],
         </footer>
         <!--END of Footer-->
     </body>
-    
-</html>
