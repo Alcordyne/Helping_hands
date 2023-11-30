@@ -181,7 +181,7 @@ h4 {
   color: #000224;
   font-weight: 600;
 }
-#Section {
+.tab-content #Section {
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr;
@@ -194,16 +194,18 @@ h4 {
     grid-column-gap: 20px;
     margin: 0 auto;
 }
-
-#First {
+.tab-content #Title {
+  grid-area: Title;
+}
+.tab-content #First {
     grid-area: First;
 }
 
-#Last {
+.tab-content #Last {
     grid-area: Last;
 }
 
-#Email {
+.tab-content #Email {
     grid-area: Email;
 }
 
