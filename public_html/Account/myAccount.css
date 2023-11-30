@@ -182,7 +182,6 @@ h4 {
   font-weight: 600;
 }
 #Section {
-    grid-area: Section;
     display: grid;
     height: 100vh;
     grid-template-columns: 1fr 1fr;
