@@ -170,6 +170,7 @@ h3 {
   padding: 15px 0;
   cursor: pointer;
   font-weight: 600;
+  color: #697077;
 }
 .tab-content {
   background-color: #ffffff;
@@ -195,5 +196,5 @@ h3 {
 }
 .tabs .active {
   background-color: #04724D;
-  color: #000224;
+  color: #ffffff;
 }
