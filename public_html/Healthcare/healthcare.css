@@ -48,7 +48,7 @@ h1 {
     height: 50px;
 }
 
-.zipCode {
+#userZipInput {
     font-size: 16px;
     width: 250px;
     height: 50px;
@@ -58,28 +58,29 @@ h1 {
     border: 1px solid #DDE1E6;
 }
 
-input.zipCode {
+input#userZipInput {
     padding: 0;
     height: 50px;
 }
 
-.Map {
+#map {
 /*    background-color: green;*/
     grid-area: Map;
     text-align: center;
     vertical-align: middle;
-}
-.Map > iframe{
-    width: 80%;
+    width: 700px;
     height: 500px;
+    margin: 0 auto;
 }
+
 #searchButton {
     grid-area: searchButton;
     width: 150px;
     height: 50px;
     place-items: center;
 }
-button#search {
+
+button#searchH {
     font-size: 16px;
     width: 150px;
     height: 50px;
