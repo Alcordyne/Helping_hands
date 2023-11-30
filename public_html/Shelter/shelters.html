@@ -2,200 +2,72 @@
 <html>
     <head>
         <title>Helping Hands</title>
-        <link rel="stylesheet" href="shelters.css">
         <link rel="stylesheet" href="../Home/home.css">
         <link rel="stylesheet" href="../Job/jobAssistance.css">
-        <link rel="stylesheet" href="/public_html/Auth/auth.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <link rel="stylesheet" href="shelters.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="viwport" content="width=device-width, initial-scale=1.0">
-        <script src="../Shelters/shelters.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+        <script src="../Shelters/shelters.js"></script>
     </head>
     
     <body>
-        <!-- Navigation Bar -->
+        <!--Navigation Bar-->
         <nav>
             <div id="Logo"><a href="../Home/home.html"><img class="logoImage" src="../Image/Helping Hands New Logo 3.png" alt="Hands holding up a house"></a></div>
             <div id="NavBar">
-                <div id="Shelters"><a href="../Shelter/shelters.html" class="navLinks">Shelters</a></div>
+                <div id="Shelters"><a href="../Shelters/shelters.html" class="navLinks">Shelters</a></div>
                 <div id="Food"><a href="../Foodbank/foodBanks.html" class="navLinks">Food Banks</a></div>
                 <div id="Job"><a href="../Job/jobAssistance.html" class="navLinks">Job Assistance</a></div>
                 <div id="Health"><a href="../Healthcare/healthcare.html" class="navLinks">Healthcare</a></div>
                 <div id="FAQ"><a href="../FAQ/FAQGuides.html" class="navLinks">FAQ & Guides</a></div>
             </div>
             <div id="SearchAcc">
-                <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
-                <div id="Search"><button onclick="performSearch()">Search</button></div>
-                <ul id="results"></ul>
-                <button class="login-with-google-btn" id="signInButton">
-                    Sign in with Google
-                  </button>
-                  <button class="login-with-google-btn" id="signOutButton">Sign Out</button>
-              
-                  <div id="message">
-                    <p>Welcome, <span id="userName"></span></p>
-                  </div>
-              
-                  <script type="module">
-                    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
-              
-                    import {
-                      getAuth,
-                      GoogleAuthProvider,
-                      signInWithPopup,
-                      signOut,
-                      onAuthStateChanged,
-                    } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-auth.js";
-              
-                    const firebaseConfig = {
-                      apiKey: "AIzaSyCMoJgx0q7dHhP4JXyCGGrUM30C0XIjHOU",
-                      authDomain: "helping-hands-294dd.firebaseapp.com",
-                      projectId: "helping-hands-294dd",
-                      storageBucket: "helping-hands-294dd.appspot.com",
-                      messagingSenderId: "1011622576310",
-                      appId: "1:1011622576310:web:f71308aeaa2f59c7eca617",
-                      measurementId: "G-HVKZL5HEHW",
-                    };
-              
-                    const app = initializeApp(firebaseConfig);
-                    const auth = getAuth();
-                    const provider = new GoogleAuthProvider();
-              
-                    const signInButton = document.getElementById("signInButton");
-                    const signOutButton = document.getElementById("signOutButton");
-                    const message = document.getElementById("message");
-                    const userName = document.getElementById("userName");
-                    const userEmail = document.getElementById("userEmail");
-              
-                    signOutButton.style.display = "none";
-                    message.style.display = "none";
-              
-                    const userSignIn = async () => {
-                      signInWithPopup(auth, provider)
-                        .then((result) => {
-                          const user = result.user;
-                          console.log(user);
-                        })
-                        .catch((error) => {
-                          const errorCode = error.code;
-                          const errorMessage = error.message;
-                        });
-                    };
-              
-                    const userSignOut = async () => {
-                      signOut(auth)
-                        .then(() => {
-                          alert("You have signed out.");
-                        })
-                        .catch((error) => {});
-                    };
-              
-                    onAuthStateChanged(auth, (user) => {
-                      if (user) {
-                        signOutButton.style.display = "inline-block";
-                        signInButton.style.display = "none";
-                        message.style.display = "inline-block";
-                        userName.innerHTML = user.displayName;
-                        userEmail.innerHTML = user.email;
-                      } else {
-                        signOutButton.style.display = "none";
-                        signInButton.style.display = "inline-block";
-                        message.style.display = "none";
-                      }
-                    });
-              
-                    signInButton.addEventListener("click", userSignIn);
-                    signOutButton.addEventListener("click", userSignOut);
-                  </script>
+                <div id="SearchInput"><input type="text" placeholder="Search for..."></div>
+                <div id="Search"><button onclick="search()">Search</button></div>
+                <div id="LogIn"><a href="../Account/logIn.html">Log In</a></div>
+                <div id="SignUp"><a href="../Account/signUp.html">Sign Up</a></div>
             </div>
-
-            <script src="../Function/search.js"></script>
         </nav>
-        <!-- END of Navigation Bar -->
+        <!--END of Navigation Bar-->
         
-        <!-- Shelters Section -->
-        <!-- Shelters Section w/ Title and Map ONLY -->
+       <!--Shelters Section-->
         <div id="Top">
             <div id="Title"><h1>Shelters</h1></div>
-            
-            <!--<div id="DropZipSearch">
-                    <div id="dropDown">
-                        <select id = "dropdown" onchange = "selectShelter()">
-                          <option>Shelters</option>
-                          <option>Domestic Violence</option>
-                          <option>Family</option>
-                          <option>Youth</option>
-                       </select>
-                        <script>
-                          let output = document.getElementById('output');
-                          function selectShelter() {
-                             let dropdown = document.getElementById('dropdown');
-                             // get the index of the selected option
-                             let selectedIndex = dropdown.selectedIndex;
-                          }
-                       </script>
-                    </div>-->
-
-                    <div id="zipCodeInput">
-                        <input id="userZipInput" class="zipCode" type="text" placeholder="Zip Code">
-                    </div>
-
-                    <div id="searchButton">
-                        <button type="button" id="search" onclick="initMap()">Find Shelters</button>
-                    </div>
-                    <script>
-                        /*function searchShelters() {
-                            // Display List
-                            document.getElementById("fourSearches").style.display = "block";
-                            document.getElementById("moreButton").style.display = "block";
-                            // End of Display List
-                        }  */
-                    </script>
-            </div>
-
-        <div class="Map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.881588688774!2d-121.42364269999996!3d38.55954189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada8d38835d9f%3A0x3fdb73cc57495670!2sCalifornia%20State%20University%2C%20Sacramento%20-%20University%20Library!5e0!3m2!1sen!2sus!4v1700614875544!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width ="600" height ="450" style="border:0;" allowfullscreen="" loading-"lazy"></iframe>
+            <div id="DropZipSearch">
+                <div id="zipCodeInput">
+                    <input id="userZipInput" type="text" placeholder="Zip Code">
+                </div>
+                <div id="searchButton">
+                    <button type="button" id="searchS" onclick="searchShelters()">Find Shelters</button>
+                </div>
+                <script>
+                    /*function searchFoodBanks() {
+                      document.getElementById("fourSearches").style.display = "block";
+                      document.getElementById("moreButton").style.display = "block";
+                    }*/
+                </script>
             </div>
 
             <!-- Google Maps API -->
             <!-- Code from Google Maps API -->
-             <div id="map">
+            <div id="map"></div>
             <div id="sidebar">
                 <h2>Results</h2>
-                <ul id="places"></ul>
-                <button id="more">Load more results</button>
+                <ul id="places-list"></ul>
+
+                <!--<button id="more">Load more results</button>-->
             </div>
-            <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
-            async defer>
-        </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly" defer></script>
                 <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
                     ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
-        
-        <script>
-            function initMap(){
-                const sacra = new google.maps.LatLng(38.582, -121.494);
-
-  infowindow = new google.maps.InfoWindow();
-  map = new google.maps.Map(document.getElementById("map"), {
-    center: sacra,
-    zoom: 15,
-  });
-
-  const request = {
-    query: "homeless shelters",
-    fields: ["name", "formatted_address", "geometry"],
-  };
-}
-        </script>
-        
-           </div>     
+                
             <!-- End of Google Maps API -->
-
+                
         </div>
-        <!-- End of Shelters Section w/ Title and Map ONLY -->
-        
+        <!-- End of Shelter Section w/ Title and Map ONLY -->
+
         <!-- Search Results (DISPLAYING INITIAL 4 RESULTS ONLY)-->
         <div id="fourSearches">
             <div class="jResources">
@@ -203,56 +75,56 @@
                 <div id="jrList">
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
@@ -283,56 +155,56 @@
                 <div id="jrList">
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
                     </div>
                     <div id="jrElement">
                         <div id="jrImage"></div>
-                        <p id="jrElementTitle">Shelter Name</p>
+                        <p id="jrElementTitle">Food Bank Name</p>
                         <p id="jrDescription">Address</p>
                         <btn id="bookmarkBtn">&#9734 Bookmark</btn>
                         <btn id="moreInfoBtn">More Info &#8594;</btn>
@@ -341,7 +213,7 @@
             </div>
         </div> 
         <!-- End of MORE Search Results -->
-        <!--END of Shelters Section-->
+        <!--END of Food Banks Section-->
         
         <!--Footer-->
         <footer>
@@ -351,4 +223,5 @@
         </footer>
         <!--END of Footer-->
     </body>
+    
 </html>
