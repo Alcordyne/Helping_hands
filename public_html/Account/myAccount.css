@@ -160,10 +160,10 @@ img.logoImage {
 }
 .tabs {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, 1fr);  
+  background-color: #F2F4F8;
 }
 h3 {
-  background-color: #F2F4F8;
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
