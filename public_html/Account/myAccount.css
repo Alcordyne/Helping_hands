@@ -139,6 +139,9 @@ img.logoImage {
     background-color: #04724D;
     color: white;
 }
+#Search:hover > button {
+    background-color: #005236;
+}
 
 #SearchInput {
     margin-top: auto;
@@ -220,6 +223,9 @@ input {
     background-color: #F2F4F8;
     margin-top: 0;
     margin-bottom: 15px;
+}
+input:hover {
+     background-color: #ddd;
 }
 .resource-section {
   border: 1px solid #ddd;
