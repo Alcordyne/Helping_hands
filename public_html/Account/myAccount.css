@@ -138,6 +138,7 @@ img.logoImage {
     border: 2px solid #04724D;
     background-color: #04724D;
     color: white;
+    transition: background-color 0.3s, color 0.3s;
 }
 #Search:hover > button {
     background-color: #005236;
@@ -172,6 +173,7 @@ img.logoImage {
   display: grid;
   grid-template-columns: repeat(2, 1fr);  
   background-color: #F2F4F8;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .tab {
@@ -182,6 +184,7 @@ img.logoImage {
   color: #555b61;
   text-decoration: underline;
   text-decoration-color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
 }
 .tab:hover {
     background-color: #ddd;
