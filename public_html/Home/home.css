@@ -1,9 +1,8 @@
-
-body{
+body {
     margin: 0;
     padding:0;
     background: white;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif;  
 }
 
 /*----------------MISSION STATEMENT SECTION----------------*/
@@ -294,6 +293,7 @@ img.logoImage {
 
 /*changes background of footer*/
 footer {
+    position: fixed;
     background-color: #666; 
     color: #fff; 
     padding: 20px 0; 
