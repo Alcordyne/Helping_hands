@@ -29,6 +29,31 @@ function toggleBookmark(ID) {
     updateBookmarkButton();
 }
 
+// Seperate bookmarks
+function toggleBookmark1() {
+    toggleBookmark(1);
+}
+
+function toggleBookmark2() {
+    toggleBookmark(2);
+}
+
+function toggleBookmark3() {
+    toggleBookmark(3);
+}
+
+function toggleBookmark4() {
+    toggleBookmark(4);
+}
+
+function toggleBookmark5() {
+    toggleBookmark(5);
+}
+
+function toggleBookmark6() {
+    toggleBookmark(6);
+}
+
 // Retrieve bookmark status from storage
 function getBookmarkStatus(ID) {
     const bookmarks = getBookmarks();
