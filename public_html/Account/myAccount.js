@@ -1,13 +1,14 @@
-jQuery(document).ready(function() {
-	jQuery('.tabs .tab-links a').on('click', function(e) {
-		var currentAttrValue = jQuery(this).attr('href');
+$(document).ready(function(){
+  $(".tabs li a").click(function() {
+    
+    // Active state for tabs
+    $(".tabs li a").removeClass("active");
+    $(this).addClass("active");
+    
+    // Active state for Tabs Content
+    $(".tab_content_container > .tab_content_active").removeClass("tab_content_active").fadeOut(200);
+    $(this.rel).fadeIn(500).addClass("tab_content_active");
+    
+  }); 
 
-		// Show/Hide Tabs
-		jQuery('.tabs ' + currentAttrValue).show().siblings().hide();
-
-		// Change/remove current tab to active
-		jQuery(this).parent('li').addClass('active').siblings().removeClass('active');
-
-		e.preventDefault();
-	});
 });
