@@ -55,34 +55,34 @@
   text-align: left;
 }
 
-#bookmarkBtn {
+#bookmarkBtn1, #bookmarkBtn2, #bookmarkBtn3, #bookmarkBtn4, #bookmarkBtn5, #bookmarkBtn6 {
   cursor: pointer;
   display: inline-block;
   margin: auto;
   margin-left: 5%;
   height: 10%;
-  line-height:250%;
+  line-height: 250%;
   width: 40%;
   border: 1px solid #dde1e6;
   border-radius: 5px;
-  font-size:medium;
+  font-size: medium;
   text-align: center;
   background-color: #04724d;
   color: white;
 }
 
 #moreInfoBtn {
-    cursor: pointer;
-    display: inline-block;
-    margin: auto;
-    margin-left: 5%;
-    height: 10%;
-    line-height:250%;
-    width: 40%;
-    font-size:medium;
-    text-align: center;
-    color: #04724d;
-    text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: auto;
+  margin-left: 5%;
+  height: 10%;
+  line-height: 250%;
+  width: 40%;
+  font-size: medium;
+  text-align: center;
+  color: #04724d;
+  text-decoration: none;
 }
 #moreInfoBtn:hover {
   text-decoration: underline;
