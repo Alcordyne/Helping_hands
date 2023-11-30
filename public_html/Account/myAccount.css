@@ -161,7 +161,7 @@ img.logoImage {
 }
 .tabs {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 h3 {
   background-color: #e4e9fd;
