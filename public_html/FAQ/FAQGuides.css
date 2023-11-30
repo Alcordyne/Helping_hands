@@ -122,7 +122,9 @@ img.logoImage {
     text-decoration: none;
     color: white;
 }
-
+#SignUp:hover {
+    background-color: #005236;
+}
 #LogIn {
     display: inline-block;
     margin-right: 10px;
@@ -131,16 +133,22 @@ img.logoImage {
     border: 2px solid #04724D;
     background-color: transparent;
     text-align: center;
+    transition: background-color 0.3s, color 0.3s;
 }
-
+#LogIn:hover {
+     background-color: #04724D;
+}
 #LogIn > a {
     line-height: 40px;
     font-size: 16px;
     vertical-align: middle;
     text-decoration: none;
     color: #04724D;
+    transition: color 0.3s;
 }
-
+#LogIn:hover > a {
+    color: white;
+}
 #Search {
     margin-top: auto;
     margin-bottom: auto;
@@ -156,7 +164,9 @@ img.logoImage {
     background-color: #04724D;
     color: white;
 }
-
+#Search:hover > button {
+    background-color: #005236;
+}
 #SearchInput {
     margin-top: auto;
     margin-bottom: auto;
