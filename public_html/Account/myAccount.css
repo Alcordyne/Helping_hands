@@ -296,7 +296,7 @@ input {
 }
 #moreInfoBtn:hover {
   text-decoration: underline;
-  text-decoration-color: #04724d;
+  text-decoration-color: #005236;
 }
 .tab-content > div {
   display: grid;
