@@ -182,7 +182,7 @@ h3 {
     grid-template-areas:
         "Title Title"
         "First Last"
-        "Email Email"
+        "Email Email";
     grid-column-gap: 20px;
     margin: 0 auto;
 }
