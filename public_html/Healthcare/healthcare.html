@@ -46,15 +46,203 @@
                     </div>
                     <script>
                         function searchHealthcareOptions() {
-                          document.getElementById("fourSearches").style.display = "block";
-                          document.getElementById("moreButton").style.display = "block";
-                        }
-                    </script>
-                </div>      
-            
-           <div class="Map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3119.881588688774!2d-121.42364269999996!3d38.55954189999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ada8d38835d9f%3A0x3fdb73cc57495670!2sCalifornia%20State%20University%2C%20Sacramento%20-%20University%20Library!5e0!3m2!1sen!2sus!4v1700614875544!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" width ="600" height ="450" style="border:0;" allowfullscreen="" loading-"lazy"></iframe>
-            </div>
+                            var zipCodeElement = document.getElementById("zipCodeInput");
+
+// Check if the element is found
+if (zipCodeElement) {
+    // Find the input element inside the div
+    var inputElement = zipCodeElement.querySelector('input');
+
+    if (inputElement && inputElement.value !== undefined) {
+        var zipCode = inputElement.value.trim();
+
+        if (zipCode !== "") {
+            var geocoder = new google.maps.Geocoder();
+            geocoder.geocode({ 'address': zipCode }, function (results, status) {
+                if (status === 'OK' && results[0]) {
+                    var location = results[0].geometry.location;
+
+                    map.setCenter(location);
+                    // Remove the alert message, and the map will focus directly
+                } else {
+                    console.error('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+        } else {
+            console.error('Please enter a valid zip code.');
+        }
+    } else {
+        console.error('Zip code input element not found.');
+    }
+} else {
+    console.error('Container div element not found.');
+}
+
+var county = {
+    info:
+      '<strong>Sacramento County Health Center</strong><br>\
+    	4600 Broadway<br> Sacramento, CA 95820<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.55319,
+    long: -121.45413,
+  }
+
+  var peach = {
+    info:
+    '<strong>Peach Tree Health Sacramento</strong><br>\
+    	3810 Rosin Ct #100<br> Sacramento, CA 95834<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.64154,
+    long: -121.47447,
+  }
+
+  var well = {
+    info:
+    '<strong>WellSpace Health - Health Care For Women - Community Health Center</strong><br>\
+    	7601 Hospital Dr #220<br> Sacramento, CA 95823<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.47193,
+    long: -121.41650,
+  }
+
+  var elica = {
+    info:
+    '<strong>Elica Health Centers - Midtown</strong><br>\
+    	3701 J St #201<br> Sacramento, CA 95816<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.57557,
+    long: -121.45814,
+  }
+
+  var dignity = {
+    info:
+    '<strong>Dignity Health Medical Group</strong><br>\
+    	3941 J St #260<br> Sacramento, CA 95819<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.7557,
+    long: -121.44749,
+  }
+
+  var nativeAmerican = {
+    info:
+    '<strong>Sacramento Native American Health Center, Inc.</strong><br>\
+    	2020 J St<br> Sacramento, CA 95811<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.58228,
+    long: -121.47599,
+  }
+
+  var harp = {
+    info:
+    '<strong>Harper Medical Group Inc.</strong><br>\
+    	9300 Tech Center Dr #210<br> Sacramento, CA 95826<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.56671,
+    long: -121.35617,
+  }
+
+  var hunt = {
+    info:
+    '<strong>Huntingtons Health Center</strong><br>\
+    	3160 Folsom Blvd<br> Sacramento, CA 95816<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.57611,
+    long: -121.46603,
+  }
+
+  var sutter = {
+    info:
+    '<strong>Sutter Medical Plaza Sacramento</strong><br>\
+    	1625 Stocton Blvd<br> Sacramento, CA 95816<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.56859,
+    long: -121.46432,
+  }
+
+  var sacCommunity = {
+    info:
+    '<strong>Sacramento Community Health</strong><br>\
+    	7600 Hospital Dr I<br> Sacramento, CA 95823<br>\
+    	<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
+    lat: 38.46947,
+    long: -121.41708,
+  }
+
+  var locations = [
+    [county.info, county.lat, county.long, 0]
+    [peach.info, peach.lat, peach.long, 1]
+    [well.info, well.lat, well.long, 2]
+    [elica.info, elica.lat, elica.long, 3]
+    [dignity.info, dignity.lat, dignity.long, 4]
+    [nativeAmerican.info, nativeAmerican.lat, nativeAmerican.long, 5]
+    [harp.info, harp.lat, harp.long, 6]
+    [hunt.info, hunt.lat, hunt.long, 7]
+    [sutter.info, sutter.lat, sutter.long, 8]
+    [sacCommunity.info, sacCommunity.lat, sacCommunity.long, 9]
+]
+
+var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 13,
+    center: new google.maps.LatLng(41.976816, -87.659916),
+    mapTypeId: google.maps.MapTypeId.ROADMAP,
+  })
+
+  var infowindow = new google.maps.InfoWindow({})
+
+  var marker, i
+
+  for (i = 0; i < locations.length; i++) {
+    marker = new google.maps.Marker({
+      position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+      map: map,
+    })
+
+    google.maps.event.addListener(
+      marker,
+      'click',
+      (function (marker, i) {
+        return function () {
+          infowindow.setContent(locations[i][0])
+          infowindow.open(map, marker)
+        }
+      })(marker, i)
+    )
+  }
+
+}
+</script>
+    </div>
+    
+    <div id="map">
+        <div id="sidebar">
+            <h2>Results</h2>
+            <ul id="places"></ul>
+            <button id="more">Load more results</button>
+        </div>
+        <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg&callback=initMap&libraries=places&v=weekly"
+        async defer>
+    </script>
+            <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+                ({key: "AIzaSyBMO2jYq8nDsxgDsl_447w55XgcdOBAflg", v: "weekly"});</script>
+    
+    <script>
+        function initMap(){
+            const sacra = new google.maps.LatLng(38.582, -121.494);
+
+infowindow = new google.maps.InfoWindow();
+map = new google.maps.Map(document.getElementById("map"), {
+center: sacra,
+zoom: 15,
+});
+
+const request = {
+query: "food banks",
+fields: ["name", "formatted_address", "geometry"],
+};
+}
+
+    </script>
         </div>
         <!-- End of Healthcare Options Section w/ Title and Map ONLY -->
         
