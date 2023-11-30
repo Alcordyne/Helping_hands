@@ -153,15 +153,6 @@ img.logoImage {
 *:focus {
   outline: 1px dotted blue;
 }
-.container {
-    width: 90%;
-    position: absolute;
-    transform: translateX(-50%);
-    left: 50%;
-    top: 120px;
-    background-color: #ffffff;
-    border: 2px solid #04724D;
-}
 .tabs {
   & > ul {
     position: relative;
