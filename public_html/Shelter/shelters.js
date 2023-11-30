@@ -123,7 +123,7 @@ function getListDetails(place, map, infowindow, marker) {
         const li = document.createElement("li");
 
         // Name Of Business
-        const nameElement = document.createElement("p");
+        const nameElement = document.createElement("h3");
         nameElement.textContent = place.name;
         li.appendChild(nameElement);
 
