@@ -155,11 +155,20 @@ li {
     text-align: center;
 }
 
-li p {
+li h3 {
     padding: 5px;
     height: 10%;
     text-align: center;
     font-weight: 600;
+    margin: auto;
+    margin-top: 5px;
+}
+
+li p {
+    padding: 5px;
+    height: 10%;
+    text-align: left;
+    font-weight: none;
     margin: auto;
     margin-top: 5px;
 }
@@ -171,4 +180,5 @@ li a {
     font-weight: 600;
     margin: auto;
     margin-top: 5px;
+    color:#04724D;
 }
