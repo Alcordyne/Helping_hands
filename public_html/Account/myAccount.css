@@ -162,9 +162,10 @@ img.logoImage {
 .tabs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  border: 1px solid #04724D;
 }
 h3 {
-  background-color: #04724D;
+  background-color: #F2F4F8;
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
@@ -193,6 +194,6 @@ h3 {
   display: block;
 }
 .tabs .active {
-  background-color: #ffffff;
-  color: #4d5bf9;
+  background-color: #04724D;
+  color: #000224;
 }
