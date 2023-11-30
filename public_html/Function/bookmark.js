@@ -7,28 +7,50 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // Checks if it is bookmarked and saves if not, removes if already saved
 function updateBookmarkButton() {
-    const bookmarkBtn = document.getElementById('bookmarkBtn');
-    const isBookmarked = getBookmarkStatus();
+    const resourceElements = document.querySelectorAll('.jrElement');
+
+    resourceElements.forEach(element => {
+        const resourceId = element.getAttribute('data-id');
+        const bookmarkBtn = element.querySelector('.bookmarkBtn');
+        const isBookmarked = getBookmarkStatus(resourceId);
+
 
     if (isBookmarked) {
         bookmarkBtn.innerHTML = '⭐ Bookmarked';
     } else {
         bookmarkBtn.innerHTML = '★ Bookmark';;
     }
+    });
 }
 
-function toggleBookmark() {
-    const isBookmarked = getBookmarkStatus();
-    setBookmarkStatus(!isBookmarked);
+function toggleBookmark(ID) {
+    const isBookmarked = getBookmarkStatus(ID);
+    setBookmarkStatus(ID, !isBookmarked);
     updateBookmarkButton();
 }
 
-// Retrieve bookmark status from local storage
-function getBookmarkStatus() {
-    return JSON.parse(localStorage.getItem('bookmarkStatus')) || false;
+// Retrieve bookmark status from storage
+function getBookmarkStatus(resourceId) {
+    const bookmarks = getBookmarks();
+    return bookmarks.includes(resourceId);
 }
 
-// Save bookmark status to local storage
-function setBookmarkStatus(status) {
-    localStorage.setItem('bookmarkStatus', JSON.stringify(status));
+function setBookmarkStatus(resourceId, status) {
+    let bookmarks = getBookmarks();
+
+    if (status) {
+        bookmarks.push(ID);
+    } else {
+        bookmarks = bookmarks.filter(id => id !== resourceId);
+    }
+    saveBookmarks(bookmarks);
+}
+
+function getBookmarks() {
+    const storedBookmarks = localStorage.getItem('bookmarks');
+    return storedBookmarks ? JSON.parse(storedBookmarks) : [];
+}
+
+function saveBookmarks(bookmarks) {
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
 }
