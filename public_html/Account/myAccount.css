@@ -202,6 +202,16 @@ img.logoImage {
     "Resource2"
     "Resource3";
  }
+input {
+    font-size: 16px;
+    width: 99%;
+    height: 35px;
+    border: 0;
+    border-bottom: 1px solid #D5D8DE;
+    background-color: #F2F4F8;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 .tab-content div {
   display: grid;
   gap: 10px;
