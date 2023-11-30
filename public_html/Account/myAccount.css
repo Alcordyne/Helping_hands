@@ -181,29 +181,28 @@ h4 {
   color: #000224;
   font-weight: 600;
 }
-.tab-content #Section {
+.tab-content #user-info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   grid-gap: 20px;
 }
 
-.tab-content #Title {
+.tab-content #user-info #Title {
   grid-column: span 2;
 }
 
-.tab-content #First {
+.tab-content #user-info #First {
   grid-area: First;
 }
 
-.tab-content #Last {
+.tab-content #user-info #Last {
   grid-area: Last;
 }
 
-.tab-content #Email {
+.tab-content #user-info #Email {
   grid-area: Email;
 }
-
 .tab-content div {
   display: none;
 }
