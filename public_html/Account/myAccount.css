@@ -181,7 +181,7 @@ h3 {
   color: #000224;
   font-weight: 600;
 }
-#Section {
+.tab-content {
     grid-area: Section;
     display: grid;
     height: 100vh;
@@ -195,15 +195,15 @@ h3 {
     margin: 0 auto;
 }
 
-#First {
+.First {
     grid-area: First;
 }
 
-#Last {
+.Last {
     grid-area: Last;
 }
 
-#Email {
+.Email {
     grid-area: Email;
 }
 .tab-content div {
