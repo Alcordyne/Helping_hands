@@ -32,29 +32,34 @@
     <!-- Main Content -->
 <div class="container">
   <div class="tabs">
-    <h3 class="active">User Info</h3>
-    <h3>Saved Resources</h3>
+    <h3 class="active" data-tab="user-info">User Info</h3>
+    <h3 data-tab="saved-resources">Saved Resources</h3>
   </div>
- <div class="tab-content">
-  <div id="Section">
-    <div id="Title">
-      <h4>User Details</h4>
+  <div class="tab-content">
+    <div id="user-info" class="tab-pane active">
+      <div id="Section">
+        <div id="Title">
+          <h4>User Details</h4>
+        </div>
+        <div id="First">
+          <h2>First Name</h2>
+          <input type="text" placeholder="First Name">
+        </div>
+        <div id="Last">
+          <h2>Last Name</h2>
+          <input type="text" placeholder="Last Name">
+        </div>
+        <div id="Email">
+          <h2>Email</h2>
+          <input type="text" placeholder="Email">
+        </div>
+      </div>
     </div>
-    <div id="First">
-      <h2>First Name</h2>
-      <input type="text" placeholder="First Name">
-    </div>
-    <div id="Last">
-      <h2>Last Name</h2>
-      <input type="text" placeholder="Last Name">
-    </div>
-    <div id="Email">
-      <h2>Email</h2>
-      <input type="text" placeholder="Email">
+    <div id="saved-resources" class="tab-pane">
+      <!-- Content for Saved Resources tab goes here -->
     </div>
   </div>
 </div>
-    </div>
     <script src="myAccount.js"></script>
     <!-- Script for tab switching -->
 </body>
