@@ -33,6 +33,7 @@ img.logoImage {
 #NavBar {
     grid-area: NavBar;
     text-align: left;
+    margin-left: 40px;
     margin-top: auto;
     margin-bottom: auto;
 }
