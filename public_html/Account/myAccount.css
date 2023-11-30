@@ -281,6 +281,10 @@ input {
     text-align: center;
     color: #04724d;
 }
+#moreInfoBtn:hover {
+  text-decoration: underline;
+  text-decoration-color: #04724d;
+}
 .tab-content div {
   display: grid;
   gap: 10px;
