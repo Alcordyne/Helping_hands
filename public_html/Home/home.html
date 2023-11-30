@@ -46,6 +46,9 @@
         </div>
         <div id="Search"><button onclick="performSearch()">Search</button></div>
         <ul id="results"></ul>
+        <div id="MyAccount">
+          <a href="../Account/myAccount.html">My Account</a>
+        </div>
         <button class="login-with-google-btn" id="signInButton">
           Sign in with Google
         </button>
@@ -86,6 +89,7 @@
           const message = document.getElementById("message");
           const userName = document.getElementById("userName");
           const userEmail = document.getElementById("userEmail");
+          const MyAccount = document.getElementById("MyAccount");
 
           signOutButton.style.display = "none";
           message.style.display = "none";
@@ -94,6 +98,7 @@
             signInWithPopup(auth, provider)
               .then((result) => {
                 const user = result.user;
+                window.location.reload(true);
                 console.log(user);
               })
               .catch((error) => {
@@ -117,10 +122,12 @@
               message.style.display = "inline-block";
               userName.innerHTML = user.displayName;
               userEmail.innerHTML = user.email;
+              MyAccount.style.display = "inline-block";
             } else {
               signOutButton.style.display = "none";
               signInButton.style.display = "inline-block";
               message.style.display = "none";
+              MyAccount.style.display = "none";
             }
           });
 

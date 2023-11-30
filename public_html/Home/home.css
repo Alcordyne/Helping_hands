@@ -127,7 +127,7 @@ img.logoImage {
     color: white;
 }
 
-#signInButton {
+/* #signInButton {
     display: inline-block;
     margin-right: 10px;
     width: 100px;
@@ -136,10 +136,10 @@ img.logoImage {
     background-color: transparent;
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
-}
-#signInButton:hover {
+} */
+/* #signInButton:hover {
      background-color: #04724D;
-}
+} */
 #signInButton > a {
     line-height: 40px;
     font-size: 16px;

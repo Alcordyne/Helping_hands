@@ -24,6 +24,9 @@
                 <div id="SearchInput"><input type="text" id="searchInput" placeholder="Search for..."></div>
                 <div id="Search"><button onclick="performSearch()">Search</button></div>
                 <ul id="results"></ul>
+                <div id="MyAccount">
+                  <a href="../Account/myAccount.html" class="navLinks">My Account</a>
+                </div>
                 <button class="login-with-google-btn" id="signInButton">
                   Sign in with Google
                 </button>
@@ -67,6 +70,7 @@
                   const bookmarkBtn2 = document.getElementById("bookmarkBtn2")
                   const bookmarkBtn3 = document.getElementById("bookmarkBtn3")
                   const bookmarkBtn4 = document.getElementById("bookmarkBtn4")
+                  const MyAccount = document.getElementById("MyAccount");
             
                   signOutButton.style.display = "none";
                   message.style.display = "none";
@@ -75,6 +79,7 @@
                     signInWithPopup(auth, provider)
                       .then((result) => {
                         const user = result.user;
+                        window.location.reload(true);
                         console.log(user);
                       })
                       .catch((error) => {
@@ -102,6 +107,7 @@
                         bookmarkBtn4.style.display = "inline-block";
                         userName.innerHTML = user.displayName;
                         userEmail.innerHTML = user.email;
+                        MyAccount.style.display = "inline-block";
                       } else {
                         signOutButton.style.display = "none";
                         signInButton.style.display = "inline-block";
@@ -110,6 +116,7 @@
                         bookmarkBtn3.style.display = "none";
                         bookmarkBtn4.style.display = "none";
                         message.style.display = "none";
+                        MyAccount.style.display = "none";
                       }
                     });
             
