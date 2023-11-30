@@ -181,6 +181,7 @@ img.logoImage {
   color: #ffffff;
 }
 .tab-content {
+  background-color: #ffffff;
   padding: 50px 40px;
   border: 1px solid #04724D;
   display: none;
