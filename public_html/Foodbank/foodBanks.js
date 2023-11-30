@@ -130,9 +130,13 @@ function initMap() {
           li.appendChild(placeAddressElement);
   
           // Website URL
+          if (detailedPlace.website) {
           const placeURLElement = document.createElement("a");
-          placeURLElement.textContent = detailedPlace.website;
+          placeURLElement.textContent = "More Info";
+          placeURLElement.href = detailedPlace.website;
+          placeURLElement.target = "_blank";
           li.appendChild(placeURLElement);
+          }
   
           placesList.appendChild(li);
   
