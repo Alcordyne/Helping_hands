@@ -151,7 +151,7 @@ img.logoImage {
     background-color: #F2F4F8;
 }
 .container {
-  width: 80vmin;
+  width: 80%;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
