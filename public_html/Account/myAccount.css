@@ -157,7 +157,6 @@ img.logoImage {
   left: 50%;
   top: 120px;
   background-color: #ffffff;
-  border: 1px solid #04724D;
 }
 .tabs {
   display: grid;
@@ -175,6 +174,7 @@ h3 {
 .tab-content {
   background-color: #ffffff;
   padding: 50px 40px;
+  border: 1px solid #04724D;
 }
 .tab-content h4 {
   font-size: 28px;
