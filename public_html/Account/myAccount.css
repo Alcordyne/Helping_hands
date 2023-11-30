@@ -111,6 +111,7 @@ img.logoImage {
 }
 #MyAccount:hover {
     background-color: #04724D;
+}
 
 #MyAccount > a {
     line-height: 40px;
@@ -122,6 +123,7 @@ img.logoImage {
 }
 #MyAccount:hover > a {
     color: white;
+}
 #Search {
     margin-top: auto;
     margin-bottom: auto;
