@@ -151,20 +151,20 @@ img.logoImage {
     background-color: #F2F4F8;
 }
 .container {
-  width: 80vmin;
+  width: 80%;
   position: absolute;
   transform: translateX(-50%);
   left: 50%;
   top: 120px;
   background-color: #ffffff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid #04724D;
 }
 .tabs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 h3 {
-  background-color: #e4e9fd;
+  background-color: #04724D;
   text-align: center;
   padding: 15px 0;
   cursor: pointer;
