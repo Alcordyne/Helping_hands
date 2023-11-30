@@ -12,7 +12,7 @@ function updateBookmarkButton() {
     resourceElements.forEach(element => {
         const resourceId = element.getAttribute('job-id');
         const bookmarkBtn = element.querySelector('.bookmarkBtn');
-        const isBookmarked = getBookmarkStatus(resourceId);
+        const isBookmarked = getBookmarkStatus(ID);
 
 
     if (isBookmarked) {
