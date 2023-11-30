@@ -155,7 +155,8 @@ img.logoImage {
   flex-wrap: wrap;
   width: 90%;
   font-family: sans-serif;
-  border: 2px solid #04724D;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .tabs__label {
