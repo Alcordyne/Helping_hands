@@ -29,27 +29,22 @@
     </nav>
 
     <!-- Main Content -->
- <div class="wrapper">
-    <ul class="tabs">
-        <li><a href="javascript:void(0); return false;" rel="#tabcontent1" class="tab active">TAB 1</a></li>
-        <li><a href="javascript:void(0); return false;" rel="#tabcontent2" class="tab">TAB 2</a></li>
-        <li><a href="javascript:void(0); return false;" rel="#tabcontent3" class="tab">TAB 3</a></li>
-    </ul>
-    
-    <div class="tab_content_container">
-        <div class="tab_content tab_content_active" id="tabcontent1">
-            <h3>What Is Loren Ipsum ?</h3>
-            <span><img src="http://lorempixel.com/output/sports-h-c-100-200-5.jpg" /></span>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
-        
-        <div class="tab_content" id="tabcontent2">
-            <h3>Why do we use ?</h3>
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-            
-            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        </div>
+<div class="container">
+  <input type="radio" id="tab1" name="tab" checked>
+  <label for="tab1"><i class="fa fa-code"></i> Features</label>
+  <input type="radio" id="tab2" name="tab">
+  <label for="tab2"><i class="fa fa-history"></i> History</label>
+  <div class="line"></div>
+  <div class="content-container">
+    <div class="content" id="c1">
+      <h3>Features</h3>
+      <p>There really are a lot of features.</p>
     </div>
+    <div class="content" id="c2">
+      <h3>History</h3>
+      <p>The project started in 2018 when someone needed something.</p>
+    </div>
+  </div>
 </div>
     <!-- Script for tab switching -->
     <script src="myAccount.js"></script>
