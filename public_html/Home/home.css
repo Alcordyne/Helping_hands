@@ -294,14 +294,10 @@ img.logoImage {
 
 /*changes background of footer*/
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     background-color: #666; 
     color: #fff; 
     padding: 20px 0; 
     text-align: center;
-    margin-top: auto;
 }
 
 /*centers footer*/
