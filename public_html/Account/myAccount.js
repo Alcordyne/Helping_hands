@@ -12,3 +12,4 @@ function openTab(tabName) {
         document.getElementById(tabName).style.display = 'grid';
         event.currentTarget.classList.add('active');
     }
+openTab('user-info');
