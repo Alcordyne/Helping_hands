@@ -127,7 +127,7 @@ img.logoImage {
     color: white;
 }
 
-#LogIn {
+#signInButton {
     display: inline-block;
     margin-right: 10px;
     width: 100px;
@@ -137,10 +137,10 @@ img.logoImage {
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
-#LogIn:hover {
+#signInButton:hover {
      background-color: #04724D;
 }
-#LogIn > a {
+#signInButton > a {
     line-height: 40px;
     font-size: 16px;
     vertical-align: middle;
@@ -148,9 +148,10 @@ img.logoImage {
     color: #04724D;
     transition: color 0.3s;
 }
-#LogIn:hover > a {
+#signInButton:hover > a {
     color: white;
 }
+
 #MyAccount {
     display: inline-block;
     margin-right: 10px;
@@ -213,6 +214,7 @@ img.logoImage {
     border: 1px solid #D5D8DE;
     background-color: #F2F4F8;
 }
+    
 
 /*----------------MISSION STATEMENT SECTION----------------*/
 
