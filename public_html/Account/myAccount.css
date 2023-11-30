@@ -285,6 +285,7 @@ input {
 #moreInfoBtn {
     cursor: pointer;
     display: inline-block;
+    text-decoration: none;
     margin: auto;
     margin-left: 5%;
     height: 10%;
