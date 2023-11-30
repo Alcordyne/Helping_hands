@@ -175,38 +175,24 @@ h3 {
   padding: 50px 40px;
   border: 1px solid #04724D;
 }
-h4 {
-  font-size: 27px;
-  margin-bottom: 20px;
-  color: #000224;
-  font-weight: 600;
-}
-.tab-content #user-info {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-gap: 20px;
-}
-
-.tab-content #user-info #Title {
-  grid-column: span 2;
-}
-
-.tab-content #user-info #First {
-  grid-area: First;
-}
-
-.tab-content #user-info #Last {
-  grid-area: Last;
-}
-
-.tab-content #user-info #Email {
-  grid-area: Email;
-}
+ .user-info {
+     grid-template-areas:
+        "First"
+        "Last"
+        "Email";
+ }
+.resources {
+     grid-template-areas:
+    "Resource1"
+    "Resource2"
+    "Resource3";
+ }
 .tab-content div {
-  display: none;
+  display: grid;
+  gap: 10px;
+padding: 20px;
 }
-.tab-content .active {
+.active {
   display: block;
 }
 .tabs .active {
