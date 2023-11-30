@@ -161,7 +161,6 @@ img.logoImage {
 .tabs {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  border: 1px solid #04724D;
 }
 h3 {
   background-color: #F2F4F8;
