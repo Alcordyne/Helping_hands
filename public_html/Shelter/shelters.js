@@ -1,79 +1,75 @@
+/**
+ * @license
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0
+ */
+// This example requires the Places library. Include the libraries=places
+// parameter when you first load the API. For example:
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+let map;
+let service;
+let infowindow;
+
 function initMap() {
-  // Create the map.
-  const sac = { lat: 38.5816, lng: -121.4944 };
-  const map = new google.maps.Map(document.getElementById("map"), {
-    center: sac,
-    zoom: 12,
+  const sydney = new google.maps.LatLng(-33.867, 151.195);
+
+  infowindow = new google.maps.InfoWindow();
+  map = new google.maps.Map(document.getElementById("map"), {
+    center: sydney,
+    zoom: 15,
   });
-}
 
-function searchShelters() {
-  let zipCode = document.getElementById('userZipInput').value;
-  const geocoder = new google.maps.Geocoder();
-  let valid = false;
+  const request = {
+    query: "homeless shelters",
+    fields: ["name", "formatted_address", "geometry"],
+  };
 
-  // check for 5-length zip code
-    if(zipCode.length == 5){
-      valid = true;
-    }
-    else{
-      alert("Invalid Zipcode");
-      zipCode = document.getElementById('userZipInput').value;
-    }
+  service = new google.maps.places.PlacesService(map);
+  service.findPlaceFromQuery(request, (results, status) => {
+    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
+      for (let i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
 
-  // Use the zipCode provided as the address for geocoding
-  geocoder.geocode({ 'address': zipCode }, function (results, status) {
-    if (status === 'OK' && results[0].geometry) {
-      const userLocation = results[0].geometry.location;
-
-      const service = new google.maps.places.PlacesService(map);
-      // Perform a nearby search.
-      service.nearbySearch(
-        {location: userLocation, radius: 800, type: "homeless_shelter"},
-        (results, status, pagination) => {
-          if (status !== "OK" || !results) return;
-
-          // Pass map as an argument to addPlaces
-          addPlaces(results, map);
-
-          // Access moreButton globally
-          moreButton.disabled = !pagination || !pagination.hasNextPage;
-          if (pagination && pagination.hasNextPage) {
-            getNextPage = () => {
-              // Note: nextPage will call the same handler function as the initial call
-              pagination.nextPage();
-            };
-          }
-        }
-      );
-    } else {
-      console.error('Geocode was not successful for the following reason:', status);
+      map.setCenter(results[0].geometry.location);
     }
   });
 }
 
-function addPlaces(places, map) {
-  const placesList = document.getElementById("places");
+function createMarker(place) {
+  if (!place.geometry || !place.geometry.location) return;
 
-  for (const place of places) {
-    if (place.geometry && place.geometry.location) {
-      new google.maps.Marker({
-        map,
-        title: place.name,
-        position: place.geometry.location,
-      });
+  const marker = new google.maps.Marker({
+    map,
+    position: place.geometry.location,
+  });
 
-      const li = document.createElement("li");
+  google.maps.event.addListener(marker, "click", () => {
+    const content = document.createElement("div");
+    const nameElement = document.createElement("h2");
 
-      li.textContent = place.name;
-      placesList.appendChild(li);
+    nameElement.textContent = place.name;
+    content.appendChild(nameElement);
 
-      li.addEventListener("click", () => {
-        map.setCenter(place.geometry.location);
-      });
-    }
+    const placeIdElement = document.createElement("p");
+
+    placeIdElement.textContent = place.place_id;
+    //content.appendChild(placeIdElement);
+
+    const placeAddressElement = document.createElement("p");
+
+    placeAddressElement.textContent = place.formatted_address;
+    content.appendChild(placeAddressElement);
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
+  });
+}
+
+// New function to create markers for an array of places
+function createMarkersForArray(places) {
+  for (let i = 0; i < places.length; i++) {
+    createMarker(places[i]);
   }
 }
 
-// Make initMap accessible globally
 window.initMap = initMap;
