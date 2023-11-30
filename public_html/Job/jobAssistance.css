@@ -82,4 +82,10 @@
     font-size:medium;
     text-align: center;
     color: #04724d;
+    text-decoration: none;
+}
+#moreInfoBtn:hover {
+  text-decoration: underline;
+  text-decoration-color: #005236;
+  color: #005236;
 }
