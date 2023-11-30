@@ -1,14 +1,14 @@
-$(document).ready(function(){
-  $(".tabs li a").click(function() {
-    
-    // Active state for tabs
-    $(".tabs li a").removeClass("active");
-    $(this).addClass("active");
-    
-    // Active state for Tabs Content
-    $(".tab_content_container > .tab_content_active").removeClass("tab_content_active").fadeOut(200);
-    $(this.rel).fadeIn(500).addClass("tab_content_active");
-    
-  }); 
-
+let tabs = document.querySelectorAll(".tabs h3");
+let tabContents = document.querySelectorAll(".tab-content div");
+tabs.forEach((tab, index) => {
+  tab.addEventListener("click", () => {
+    tabContents.forEach((content) => {
+      content.classList.remove("active");
+    });
+    tabs.forEach((tab) => {
+      tab.classList.remove("active");
+    });
+    tabContents[index].classList.add("active");
+    tabs[index].classList.add("active");
+  });
 });
