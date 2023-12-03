@@ -302,6 +302,52 @@
         </div>
         </footer> -->
         <!--END of Footer-->
+        <!-- Survey Pop-up -->
+<div id="surveyPopup" class="survey-popup">
+    <div class="survey-content">
+        <span class="close-button" onclick="toggleSurveyPopup()">&times;</span>
+        <img src="MissionPhotoofHands.jpg" alt="Background Image" class="popup-background">
+        <div class="popup-text">
+            <img src="helpinghandslogo.jpg" alt="Helping Hands Logo" class="logoImage">
+            <h2>Take a Survey</h2>
+            <p>Let us know how we are doing.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSftXJ1YajsNUWQQk22x2kXyAWXGEb8_vLRXQa2HUKGQw6urFQ/viewform" target="_blank">
+                <button>Survey</button>
+            </a>
+            
+        </div>
+    </div>
+</div>
+
     </body>
-    
+    <!-- JavaScript for Survey Pop-up -->
+<script>
+    // Function to open the survey pop-up
+    function openSurveyPopup() {
+        document.getElementById('surveyPopup').style.display = 'block';
+    }
+
+
+    // Function to close the survey pop-up
+    function closeSurveyPopup() {
+        document.getElementById('surveyPopup').style.display = 'none';
+    }
+
+
+    // Open the survey pop-up after a few seconds
+    setTimeout(openSurveyPopup, 5000);  // 5 seconds
+
+
+    // Function to toggle the survey pop-up
+    function toggleSurveyPopup() {
+        var popup = document.getElementById('surveyPopup');
+        if (popup.style.display === 'none' || popup.style.display === '') {
+            popup.style.display = 'block';
+        } else {
+            popup.style.display = 'none';
+        }
+    }
+</script>
+<button onclick="window.location.href = 'https://forms.gle/8iHNjM6t7dYeRoa46'">Survey</button>
+    </body>
 </html>
